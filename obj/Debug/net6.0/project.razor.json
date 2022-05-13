@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\GestionARG.csproj",
+  "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16298,43 +16298,43 @@
   "RootNamespace": "GestionARG",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\Home\\ListadoEmpleados.cshtml",
-      "TargetPath": "Views\\Home\\ListadoEmpleados.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Home\\ListadoEmpleados.cshtml",
+      "TargetPath": "Views\\Home\\ListadoEmpleados.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],
