@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\GestionARG.csproj": {}
+    "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\GestionARG.csproj": {
+    "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\GestionARG.csproj",
+        "projectUniqueName": "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj",
         "projectName": "GestionARG",
-        "projectPath": "C:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\GestionARG.csproj",
+        "projectPath": "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj",
         "packagesPath": "C:\\Users\\romeo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\romeo\\Onedrive\\Escritorio\\GestionARG1\\GestionARG\\obj\\",
+        "outputPath": "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\romeo\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -16318,11 +16318,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Home\\ListadoEmpleados.cshtml",
-      "TargetPath": "Views\\Home\\ListadoEmpleados.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
