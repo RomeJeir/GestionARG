@@ -18,6 +18,14 @@ public class HomeController : Controller
         return View();
     }
 
+   /*  public IActionResult VerPersona(int IdEmpleado)
+        {
+            InitEspecialidades(); <======= QUE PIJA ES ESTO
+            var persona = BD.ConsultaEmpleado(IdEmpleado);
+            ViewBag.UnEmpleado = empleado;
+            ViewBag.UnaEspecialidad = BD.ConsultaEspecialidad(curso.IdEspecialidad);  <===== AVERIGUAR SI NECESITAMOS
+            return View("Index");
+        } */
     public IActionResult Privacy()
     {
         return View();

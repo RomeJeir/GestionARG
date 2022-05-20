@@ -9,14 +9,16 @@ namespace GestionARG.Models
 {
     public class BaseDatos
     {
+         private static List<Persona> _ListaPersonas = new List<Persona>();
+        
         private static string _connectionString = @"Server=DESKTOP-4CCAH31;DataBase=GestionARG;Trusted_Conecction=True;";
 
-     /*    public static Persona ConsultaGestionARG(int IdEmpleado)
+     /*    public static Persona ConsultaEmpleado(int IdEmpleado)
         {
             Persona IdEmpleado = null;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Nombre, Apellido, IdEstablecimiento, Voto, NumeroTramite FROM Personas WHERE DNI"; 
+                string sql = "SELECT Nombre, Direccion, DNI FROM Empleados "; 
             }
             return IdEmpleado;
         }*/
