@@ -1,5 +1,5 @@
 nav{
-  background-color: rgb(19, 158, 158);
+  background-color: rgb(17, 136, 136);
 }
 html {
   font-size: 14px;
@@ -17,12 +17,12 @@ html {
 }
 
 body {
-  background-color: rgb(91, 21, 156);
+  background-color: rgb(71, 25, 114);
   margin-bottom: 60px;
 }
 
 #derecha{
-  margin-left: 50em;
+  margin-left: 10em;
 }
 
 #derechita{
@@ -37,10 +37,47 @@ body {
 
 .LetraMenosGrande{
   font-family: 'Courier New', Courier, monospace;
-  font-size: 30px;
+  font-size: 18px;
   color:white;
 }
 
-#titulo{
-  margin-bottom: 100em;
+.tituloPrincipal{
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 20px;
+  color: white;
+}
+.titulo{
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: white;
+}
+
+.caja{
+  background-color: #68CBCA;
+  border-radius: 8px;
+}
+
+#logito{
+  width: 85px;
+}
+
+#manito{
+  width: 50px;
+  height: 50px;
+}
+
+#busqueda{
+  width: 75px;
+  height: 65px;
+}
+
+#flechita{
+  width: 65px;
+  height: 65px;
+}
+
+#lupita{
+  width: 75px;
+  height: 65px;
 }
