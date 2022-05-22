@@ -1,5 +1,12 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Web;
+using System.Data;
+using System.Data.SqlClient;
+using Microsoft.Extensions.Logging;
 using GestionARG.Models;
 
 namespace GestionARG.Controllers;
@@ -18,14 +25,20 @@ public class HomeController : Controller
         return View();
     }
 
-   /*  public IActionResult VerPersona(int IdEmpleado)
+     public IActionResult VerEmpleado(int IdEmpleado)
         {
-            InitEspecialidades(); <======= QUE PIJA ES ESTO
-            var persona = BD.ConsultaEmpleado(IdEmpleado);
-            ViewBag.UnEmpleado = empleado;
-            ViewBag.UnaEspecialidad = BD.ConsultaEspecialidad(curso.IdEspecialidad);  <===== AVERIGUAR SI NECESITAMOS
-            return View("Index");
-        } */
+
+            string cadena = @"Server=DESKTOP-BSJ52N9;DataBase=GestionARG;Trusted_Conecction=True;";
+            SqlConnection con = new SqlConnection(cadena);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA FROM Empleados",con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return View("Index", dt);
+
+        } 
     public IActionResult Privacy()
     {
         return View();

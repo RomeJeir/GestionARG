@@ -2,7 +2,7 @@ using System;
 
 namespace GestionARG.Models
 {
-    public class Persona
+    public class Empleado
     {
         private int _DNI;
         private string _Nombre;
@@ -59,7 +59,7 @@ namespace GestionARG.Models
                 _IdJefe=value;
             }
                 }
-        public Persona(int dni, string nombre, string area, string descripcion, string direccion, int idjefe)
+        public Empleado (int dni, string nombre, string area, string descripcion, string direccion, int idjefe)
         {
             _DNI = dni;
             _Nombre = Nombre;
