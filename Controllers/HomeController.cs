@@ -28,7 +28,7 @@ public class HomeController : Controller
      public IActionResult VerEmpleado(int IdEmpleado)
         {
 
-            string cadena = @"Server=DESKTOP-BSJ52N9;DataBase=GestionARG;Trusted_Conecction=True;";
+            string cadena = @"Server=A-LUM-13;DataBase=GestionARG;Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(cadena);
             SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA FROM Empleados",con);
 
