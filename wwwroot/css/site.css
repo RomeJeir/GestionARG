@@ -22,7 +22,7 @@ body {
 }
 
 #derecha{
-  margin-left: 15em;
+  margin-left: 30em;
 }
 
 #derechita{
@@ -68,16 +68,20 @@ body {
 }
 
 #busqueda{
-  width: 75px;
-  height: 65px;
+  width: 65px;
+  height: 55px;
 }
 
 #flechita{
-  width: 65px;
-  height: 65px;
+  width: 45px;
+  height: 55px;
 }
 
 #lupita{
-  width: 75px;
-  height: 65px;
+  width: 55px;
+  height: 45px;
+}
+
+h3{
+  color: white;
 }

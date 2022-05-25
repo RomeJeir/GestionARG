@@ -1,0 +1,42 @@
+@using System.Data;
+
+@model DataTable;
+@{
+    ViewData["Title"] = "Listado de empleados";
+}
+
+<div class="text-center">
+    <h1 class="display-4; tituloPrincipal">GestionARG</h1>
+</div>
+<h1 class="titulo">Listado de empleados</h1>
+<div class="text-center">
+  <div class="container; caja">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="titulo">Nombre del empleado</h2>
+      </div>
+      <div class="col-md-6">
+        <h2 class="titulo">Datos y descripción</h2>
+      </div>
+      <div class="text-center">
+      @foreach (DataRow r in Model.Rows)
+            {
+              <div class="container">
+                <div class="row">
+              <h3>
+                @Convert.ToString(r["Nombre"])
+              </h3>
+              <h3>
+                @Convert.ToString(r["DNI"])
+                </h3>
+                <h3>
+                @Convert.ToString(r["Area"])
+                </h3>
+                </div>
+              </div>
+            }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

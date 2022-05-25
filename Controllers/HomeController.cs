@@ -13,12 +13,6 @@ namespace GestionARG.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
 
     public IActionResult Index()
     {
@@ -28,7 +22,7 @@ public class HomeController : Controller
      public IActionResult VerEmpleado(int IdEmpleado)
         {
 
-            string cadena = @"Server=A-LUM-13;DataBase=GestionARG;Integrated Security=SSPI;";
+            string cadena = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(cadena);
             SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA FROM Empleados",con);
 
@@ -39,14 +33,10 @@ public class HomeController : Controller
             return View("Index", dt);
 
         } 
-    public IActionResult Privacy()
+
+    public IActionResult VerEmpleados()
     {
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }
