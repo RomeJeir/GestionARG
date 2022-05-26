@@ -1,5 +1,4 @@
 @using System.Data;
-
 @model DataTable;
 @{
     ViewData["Title"] = "Listado de empleados";
@@ -12,10 +11,10 @@
 <div class="text-center">
   <div class="container; caja">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-5">
         <h2 class="titulo">Nombre del empleado</h2>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-7">
         <h2 class="titulo">Datos y descripción</h2>
       </div>
       <div class="text-center">
@@ -23,14 +22,13 @@
             {
               <div class="container">
                 <div class="row">
-              <h3>
+              <h3 class="col-md-5">
                 @Convert.ToString(r["Nombre"])
               </h3>
-              <h3>
+              <h3 class="col-md-7">
                 @Convert.ToString(r["DNI"])
-                </h3>
-                <h3>
                 @Convert.ToString(r["Area"])
+                @Convert.ToString(r["Descripcion"])
                 </h3>
                 </div>
               </div>

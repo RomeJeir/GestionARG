@@ -22,14 +22,14 @@ public class HomeController : Controller
      public IActionResult VerEmpleados(int IdEmpleado)
         {
 
-            string cadena = @"Server=A-LUM-13;DataBase=GestionARG;Trusted_Connection=True;";
+            string cadena = @"Server=A-AMI-11;DataBase=GestionARG;Trusted_Connection=True;";
             SqlConnection con = new SqlConnection(cadena);
-            SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA FROM Empleados",con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA, DESCRIPCION FROM Empleados",con);
             DataTable dt = new DataTable();
 
             da.Fill(dt);
 
-            return View();
+            return View(dt);
 
         } 
 }
