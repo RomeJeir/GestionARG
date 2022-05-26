@@ -22,7 +22,7 @@ public class HomeController : Controller
      public IActionResult VerEmpleados(int IdEmpleado)
         {
 
-            string cadena = @"Server=A-AMI-11;DataBase=GestionARG;Trusted_Connection=True;";
+            string cadena = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Trusted_Connection=True;";
             SqlConnection con = new SqlConnection(cadena);
             SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA, DESCRIPCION FROM Empleados",con);
             DataTable dt = new DataTable();
