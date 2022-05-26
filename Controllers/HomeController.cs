@@ -19,24 +19,17 @@ public class HomeController : Controller
         return View();
     }
 
-     public IActionResult VerEmpleado(int IdEmpleado)
+     public IActionResult VerEmpleados(int IdEmpleado)
         {
 
-            string cadena = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Integrated Security=SSPI;";
+            string cadena = @"Server=A-LUM-13;DataBase=GestionARG;Trusted_Connection=True;";
             SqlConnection con = new SqlConnection(cadena);
             SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA FROM Empleados",con);
-
             DataTable dt = new DataTable();
 
             da.Fill(dt);
 
-            return View("Index", dt);
+            return View();
 
         } 
-
-    public IActionResult VerEmpleados()
-    {
-        return View();
-    }
-
 }
