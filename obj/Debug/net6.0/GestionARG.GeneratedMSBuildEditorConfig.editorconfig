@@ -19,8 +19,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250cm9sRW1wbGVhZG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/46583925/Desktop/GestionARG/GestionARG/Views/Home/DepartamentoAdministracion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXBhcnRhbWVudG9BZG1pbmlzdHJhY2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/46583925/Desktop/GestionARG/GestionARG/Views/Home/DepartamentoVentas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXBhcnRhbWVudG9WZW50YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/46583925/Desktop/GestionARG/GestionARG/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/46583925/Desktop/GestionARG/GestionARG/Views/Home/SubidaEmpleados.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWJpZGFFbXBsZWFkb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/46583925/Desktop/GestionARG/GestionARG/Views/Home/SubidaTareas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWJpZGFUYXJlYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/46583925/Desktop/GestionARG/GestionARG/Views/Home/VerEmpleados.cshtml]

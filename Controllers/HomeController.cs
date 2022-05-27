@@ -37,5 +37,25 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    public IActionResult DepartamentoVentas()
+    {
+        return View();
+    }
+
+    public IActionResult DepartamentoAdministracion()
+    {
+        return View();
+    }
+
+    public IActionResult SubidaTareas()
+    {
+        return View();
+    }
+
+    public IActionResult SubidaEmpleados()
+    {
+        return View();
+    }
 }
 }
