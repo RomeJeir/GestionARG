@@ -10,7 +10,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand LetraGrande" href="#" id="derechita">Inicio</a>
+  <a class="navbar-brand LetraGrande" href='@Url.Action("Index","Home")' id="derechita">Inicio</a>
   </button>
   <img src="/img/logo.png" id="logito">
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,7 +22,7 @@
       </li>
       <img src="/img/busqueda.png" id="busqueda">
       <li class="nav-item">
-        <a class="nav-link LetraMenosGrande" href="#">Control de empleados</a>
+        <a class="nav-link LetraMenosGrande" href='@Url.Action("ControlEmpleados","Home")'>Control de empleados</a>
       </li>
       <img src="/img/flechita.png" id="flechita">
       <li class="nav-item">
@@ -30,7 +30,7 @@
       </li>
       <img src="/img/lupita.png" id="lupita">
         <li class="nav-item">
-        <a class="nav-link LetraMenosGrande" href='@Url.Action("VerEmpleados", "Home")'>Listado de empelados</a>
+        <a class="nav-link LetraMenosGrande" href='@Url.Action("VerEmpleados","Home")'>Listado de empelados</a>
       </li>
     </ul>
   </div>
