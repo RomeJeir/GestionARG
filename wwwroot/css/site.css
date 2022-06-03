@@ -69,7 +69,7 @@ body {
   border-radius: 8px;
   margin-bottom: 30px;
   margin-top: 30px;
-  height: 400px;
+  height: 525px;
 }
 
 .gallardo{
@@ -140,4 +140,11 @@ h3{
   background-color: rgb(78, 173, 252);
   color: white;
   margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.dos{
+  background-color: #68CBCA;
+  border-radius: 8px;
+  margin-top: 10px;
 }
