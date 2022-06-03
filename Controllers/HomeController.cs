@@ -54,8 +54,8 @@ public class HomeController : Controller
         return View();
     }
 
-    /*
-    public IActionResult SubidaTareasPOST()
+    
+    public IActionResult SubidaTareasPOST(string nombreTarea , DateTime FechaLimite , DateTime FechaAsignacion , string Valoracion , string Descripcion)
     {
         try
 
@@ -63,34 +63,11 @@ public class HomeController : Controller
 
         string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
         SqlConnection con = new SqlConnection(cadena);
-        string sentencia = new String.Format("INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION) VALUES ('{0}', '{1}', '{2}' '{3}', '{4}')", nombre, dni, area, descripcion, direccion);
-        SqlDataAdapter com = SqlCommand(sentencia, con);
-
         con.Open();
-        int cantidadFilasAfectada = com.ExecuteNonQuery();
-        con.Close();
-
-                if(cantidadFilasAfectadas != 1){ 
-            throw new ApplicationException("No se agrego el empleado");
+        
         }
 
-        TempData["MSG"] = "Se subio el empelado con exito" + string.Format("{0} {1} {2} {3} {4}", nombre, dni, area, descripcion, direccion);
-
-        return View("SubidaEmpleados");
-
-        }
-        catch (System.Exception ex)
-        {
-            
-            TempData["MSG"] = "No se agrego... " + string.Format("{0} {1} {2} {3} {4}", nombre, dni, area, descripcion, direccion, ex.Message);
-            return View("SubidaEmpleados");
-        }
-
-
-        return View(SubidaTareas);
     }
-    */
-
     public IActionResult SubidaEmpleados(){
 
         return View();

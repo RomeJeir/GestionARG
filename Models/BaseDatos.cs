@@ -12,5 +12,16 @@ namespace GestionARG.Models
          private static List<Empleado> _ListaPersonas = new List<Empleado>();
         
         private static string _connectionString = @"Server=DESKTOP-4CCAH31;DataBase=GestionARG;Trusted_Conecction=True;";
+    
+    public static void SubidaTareas(){
+
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+
+            string sql = "INSERT INTO Tareas";
+
+
+
+        }
+    }
     }
 }
