@@ -69,7 +69,11 @@ body {
   border-radius: 8px;
   margin-bottom: 30px;
   margin-top: 30px;
-  height: 220px;
+  height: 400px;
+}
+
+.gallardo{
+  text-align: left;
 }
 
 .caja{
@@ -130,4 +134,10 @@ h3{
 
 .h1-margin{
   margin-bottom: 2em;
+}
+
+.boton{
+  background-color: rgb(78, 173, 252);
+  color: white;
+  margin-top: 2em;
 }
