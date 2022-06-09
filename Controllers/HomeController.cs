@@ -22,7 +22,7 @@ public class HomeController : Controller
     public IActionResult VerEmpleados(int IdEmpleado)
         {
 
-            string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
+            string cadena = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Trusted_Connection=True;";
             SqlConnection con = new SqlConnection(cadena);
             SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA, DESCRIPCION FROM Empleados",con);
             DataTable dt = new DataTable();
@@ -54,37 +54,23 @@ public class HomeController : Controller
         return View();
     }
 
-    
-    public IActionResult SubidaTareasPOST(string nombreTarea , DateTime FechaLimite , DateTime FechaAsignacion , string Valoracion , string Descripcion)
-    {
-        try
-
-        {
-
-        string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
-        SqlConnection con = new SqlConnection(cadena);
-        con.Open();
-        
-        }
-
-    }
     public IActionResult SubidaEmpleados(){
 
         return View();
 
     }
 
-    public IActionResult SubidaEmpleadosPOST(string nombre, int dni, string area, string descripcion, string direccion)
+    public IActionResult SubidaEmpleadosPOST(string nombre, int dni, string area, string descripcion, string direccion, int idjefe)
     {
 
         try
 
         {
 
-        string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
+        string cadena = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Trusted_Connection=True;";
         SqlConnection con = new SqlConnection(cadena);
         con.Open();
-        string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION) VALUES ('"+ nombre +"', '"+ dni +"', '"+ area + "', '" + descripcion + "', '" + direccion +"')";
+        string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ nombre +"', '"+ dni +"', '"+ area + "', '" + descripcion + "', '" + direccion +"''" + idjefe +"')";
         SqlCommand Consulta = new SqlCommand();
         Consulta.CommandText = sentencia;
         Consulta.CommandType = CommandType.StoredProcedure;
@@ -96,7 +82,7 @@ public class HomeController : Controller
             throw new ApplicationException("No se agrego el empleado");
         }
 
-        TempData["MSG"] = "Se subio el empelado con exito" + string.Format("{0} {1} {2} {3} {4}", nombre, dni, area, descripcion, direccion);
+        TempData["MSG"] = "Se subio el empelado con exito" + string.Format("{0} {1} {2} {3} {4} {5}", nombre, dni, area, descripcion, direccion, idjefe);
 
         return View("SubidaEmpleados");
 
@@ -104,7 +90,7 @@ public class HomeController : Controller
         catch (System.Exception ex)
         {
             
-            TempData["MSG"] = "No se agrego... " + string.Format("{0} {1} {2} {3} {4}", nombre, dni, area, descripcion, direccion, ex.Message);
+            TempData["MSG"] = "No se agrego... " + string.Format("{0} {1} {2} {3} {4} {5}", nombre, dni, area, descripcion, direccion, idjefe, ex.Message);
             return View("SubidaEmpleados");
         }
 
