@@ -2,26 +2,67 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using System.Data.SqlClient;
 using Dapper;
 
 namespace GestionARG.Models
 {
-    public class BaseDatos
+    public static class BaseDatos
     {
-         private static List<Empleado> _ListaPersonas = new List<Empleado>();
+            private static List<Empleado> _ListaPersonas = new List<Empleado>();
+            
+            private static string _connectionString = @"Server=DESKTOP-4CCAH31;DataBase=GestionARG;Trusted_Conecction=True;";
+            private static SqlConnection con;
         
-        private static string _connectionString = @"Server=DESKTOP-4CCAH31;DataBase=GestionARG;Trusted_Conecction=True;";
-    
-    public static void SubidaTareas(){
+        public static void SubidaTareas(){
 
-        using(SqlConnection db = new SqlConnection(_connectionString)){
+            using(SqlConnection db = new SqlConnection(_connectionString)){
 
-            string sql = "INSERT INTO Tareas";
+                //string sql = "INSERT INTO Tareas";
 
+
+
+            }
+        }
+
+        private static void Conectar()
+        {
+            string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
+            con = new SqlConnection(cadena);
+            con.Open();
+
+        }
+        private static void Desconectar()
+        {
+            con.Close();
+        }
+        public static int SubirEmpleado(Empleado emp)
+        {
+            Conectar();
+            string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '" 
+                    + emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
+            Console.WriteLine(sentencia);
+            SqlCommand Consulta = con.CreateCommand();
+            Consulta.CommandText = sentencia;
+            Consulta.CommandType = CommandType.Text;
+            
+            int cantidadFilasAfectada = Consulta.ExecuteNonQuery();
+            Desconectar();
+            return cantidadFilasAfectada;
+        }
+
+        public static DataTable VerEmpleados()
+        {
+            Conectar();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA, DESCRIPCION FROM Empleados",con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Desconectar();
+            return dt;
 
 
         }
-    }
+
     }
 }

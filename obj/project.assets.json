@@ -482,24 +482,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\romeo\\.nuget\\packages\\": {}
+    "C:\\Users\\46583925\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj",
+      "projectUniqueName": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
       "projectName": "GestionARG",
-      "projectPath": "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\GestionARG.csproj",
-      "packagesPath": "C:\\Users\\romeo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\romeo\\OneDrive\\Escritorio\\GestionARG\\GestionARG\\obj\\",
+      "projectPath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
+      "packagesPath": "C:\\Users\\46583925\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\romeo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\46583925\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

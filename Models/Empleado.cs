@@ -62,7 +62,7 @@ namespace GestionARG.Models
         public Empleado (int dni, string nombre, string area, string descripcion, string direccion, int idjefe)
         {
             _DNI = dni;
-            _Nombre = Nombre;
+            _Nombre = nombre;
             _Area=area;
             _Descripcion=descripcion;
             _Direccion=direccion;
