@@ -6,9 +6,43 @@
     <h1 class="LetraGrande" id="departamentos">Subida de tareas</h1>
     <h3 class="LetraMenosGrande">Recurde que siempre que quiera agregar una tarea, empiece por el numero 0, debido a que para empecesar no tendra calificaion </h3>
 </div>
+@using (Html.BeginForm("SubidaTareas", "Home", FormMethod.Post))
+{
 <div class="text-center">
-  <div class="container; caja-control">
+  <div class="container dos">
     <div class="row">
+        <div class="col-md-4">
+          <div class="form-group gallardo">
+            <label for="exampleInputEmail1" class="">Nombre</label> @Html.TextBox("Nombre")
+          </div>
+        </div>
+        <div class="col-md-4">  
+          <div class="form-group gallardo">
+            <label for="exampleInputPassword1">Fecha limite de la tarea</label> @Html.TextBox("FechaLimite")
+          </div>
+        </div> 
+        <div class="col-md-4">
+          <div class="form-group gallardo">
+            <label for="exampleInputPassword1">Fecha de hoy</label> @Html.TextBox("FechaCreacion")
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group gallardo">
+            <label for="exampleInputPassword1">Puntaje</label> @Html.TextBox("Puntaje")
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group gallardo">
+            <label for="exampleFormControlTextarea1">Descripcion</label> @Html.TextBox("Descripcion")
+          </div>
+        </div>
+          <div class="col-md-4">
+            <div class="form-group gallardo">
+              <label for="exampleFormControlTextarea1">Id del empleado correspondiente</label> @Html.TextBox("IdEmpleado")
+            </div>
+          </div>
+      </div>
+      <button class="btn boton" href='@Url.Action("SubidaEmpleadosPOST","Home")'>Subir</button>
     </div>
-  </div>
 </div>
+}
