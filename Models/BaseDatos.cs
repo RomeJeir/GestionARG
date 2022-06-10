@@ -15,6 +15,18 @@ namespace GestionARG.Models
             private static string _connectionString = @"Server=DESKTOP-4CCAH31;DataBase=GestionARG;Trusted_Conecction=True;";
             private static SqlConnection con;
         
+
+                private static void Conectar()
+        {
+            string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
+            con = new SqlConnection(cadena);
+            con.Open();
+
+        }
+        private static void Desconectar()
+        {
+            con.Close();
+        }   
         public static void SubidaTareas(){
 
             using(SqlConnection db = new SqlConnection(_connectionString)){
@@ -26,17 +38,7 @@ namespace GestionARG.Models
             }
         }
 
-        private static void Conectar()
-        {
-            string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
-            con = new SqlConnection(cadena);
-            con.Open();
 
-        }
-        private static void Desconectar()
-        {
-            con.Close();
-        }
         public static int SubirEmpleado(Empleado emp)
         {
             Conectar();
