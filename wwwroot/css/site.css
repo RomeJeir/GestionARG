@@ -148,3 +148,12 @@ h3{
   border-radius: 8px;
   margin-top: 10px;
 }
+
+.lisgrup{
+  background-color: #68CBCA;
+  border-color: transparent;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  margin-top: 0.7em;
+  color: white;
+}

@@ -42,9 +42,7 @@ namespace GestionARG.Models
         public static int SubirEmpleado(Empleado emp)
         {
             Conectar();
-            string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '" 
-                    + emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
-            Console.WriteLine(sentencia);
+            string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
             Consulta.CommandType = CommandType.Text;
@@ -54,6 +52,20 @@ namespace GestionARG.Models
             return cantidadFilasAfectada;
         }
 
+               public static int SubirTarea(Tarea tar)
+        {
+            Conectar();
+            string sentencia = "INSERT INTO Empleados (Nombre, FechaLimite, FechaCreacion, Puntaje, Descripcion, IdEmpleado) VALUES ('"+ tar.Nombre +"', "+ tar.FechaLimite +", '"+ tar.FechaCreacion + "', '"+ tar.Puntaje + "', '" + tar.Descripcion +"'," + tar.IdEmpleado + ")";
+            SqlCommand Consulta = con.CreateCommand();
+            Consulta.CommandText = sentencia;
+            Consulta.CommandType = CommandType.Text;
+            
+            int cantidadFilasAfectada = Consulta.ExecuteNonQuery();
+            Desconectar();
+            return cantidadFilasAfectada;
+        }
+       
+       
         public static DataTable VerEmpleados()
         {
             Conectar();

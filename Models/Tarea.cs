@@ -62,6 +62,14 @@ namespace GestionARG.Models
                 _Descripcion=value;
             }
                 }
+                   public int IdEmpleado{
+            get{
+                return _IdEmpleado;
+            }
+            set{
+                _IdEmpleado=value;
+            }
+                }
         public Tarea (int IdTarea, string Nombre, DateTime FechaCreacion, DateTime FechaLimite, string Puntaje, string Descripcion, int IdEmpleado)
         {
             _IdTarea = IdTarea;

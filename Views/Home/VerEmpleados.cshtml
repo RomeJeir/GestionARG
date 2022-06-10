@@ -21,15 +21,20 @@
       @foreach (DataRow r in Model.Rows)
             {
               <div class="container">
-                <div class="row">
-                  <h3 class="col-md-5">
-                    @Convert.ToString(r["Nombre"])
-                  </h3>
-                  <h3 class="col-md-7">
-                    @Convert.ToString(r["DNI"])
-                    @Convert.ToString(r["Area"])
-                    @Convert.ToString(r["Descripcion"])
-                  </h3>
+                <div class="row"><hr>
+                  <div class="col-md-5">
+                    <h3 class="lisgrup">
+                      @Convert.ToString(r["Nombre"])
+                    </h3>
+                  </div> 
+                  <div class="col-md-7">
+                    <ul class="list-group">
+                      <li class="list-group-item lisgrup"><span><p>DNI:</p></span>@Convert.ToString(r["DNI"])</li>
+                      <li class="list-group-item lisgrup"><span><p>Area:</p></span>@Convert.ToString(r["Area"])</li>
+                      <li class="list-group-item lisgrup"><span><p>Descripción:</p></span>@Convert.ToString(r["Descripcion"])</li>
+                      <br>
+                    </ul>
+                  </div>  
                 </div>
               </div>
             }
