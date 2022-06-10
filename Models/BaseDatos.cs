@@ -19,7 +19,7 @@ namespace GestionARG.Models
 
             using(SqlConnection db = new SqlConnection(_connectionString)){
 
-                //string sql = "INSERT INTO Tareas";
+                string sql = "INSERT INTO Tareas";
 
 
 
