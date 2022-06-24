@@ -32,6 +32,8 @@ namespace GestionARG.Models
         {
             Conectar();
             string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
+
+            System.Console.WriteLine("La tarea es NULL");
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
             Consulta.CommandType = CommandType.Text;
@@ -41,10 +43,33 @@ namespace GestionARG.Models
             return cantidadFilasAfectada;
         }
 
+        public static string ToSQLString (string dato){
+            string returnString;
+            if (dato!=null){
+                returnString = "'" + dato + "'";
+            }else{
+                returnString = "NULL";
+            }
+            return returnString;
+
+        }
+
+        public static string ToSQLDate (DateTime dato){
+            string returnString;
+            if (dato!=null){
+                returnString = "'" + dato.ToString("yyyy-MM-dd")  + "'";
+            }else{
+                returnString = "NULL";
+            }
+            return returnString;
+
+        }
+
         public static int SubirTarea(Tarea tar)
         {
             Conectar();
-            string sentencia = "INSERT INTO Tareas (Nombre, FechaLimite, FechaCreacion, Puntaje, Descripcion, IdEmpleado) VALUES ('"+ tar.nombre +"', "+ tar.fechaLimite +", '"+ tar.fechaCreacion + "', '"+ tar.puntaje + "', '" + tar.descripcion +"'," + tar.idEmpleado +")";
+            string sentencia = "INSERT INTO Tareas (NOMBRE, FECHALIMITE, FECHACREACION, PUNTAJE, DESCRIPCION, IDEMPLEADO) VALUES ("+ ToSQLString (tar.nombre) + ", " + ToSQLDate(tar.fechaLimite) + ",  " +  ToSQLDate(tar.fechaCreacion) +  ", " + ToSQLString (tar.puntaje) + ", " + ToSQLString (tar.descripcion) +" , " + tar.idEmpleado +")";
+
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
             Consulta.CommandType = CommandType.Text;

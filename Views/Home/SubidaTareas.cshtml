@@ -1,0 +1,56 @@
+@using GestionARG.Models
+@model Tarea
+@{
+    ViewData["Title"] = "Subida de Tareas";
+}
+
+<div class="text-center">
+    <h1 class="LetraGrande" id="departamentos">Subida de tareas</h1>
+    <h3 class="LetraMenosGrande">Recurde que siempre que quiera agregar una tarea, empiece por el numero 0, debido a que para empecesar no tendra calificaion </h3>
+</div>
+@using (Html.BeginForm("SubidaTareas", "Home", FormMethod.Post))
+{
+
+  <div class="container dos">
+    <div class="row">
+        <div class="col-md-4">
+          
+            Nombre
+            @Html.TextBoxFor(m => m.nombre)
+          
+        </div>
+        <div class="col-md-4">  
+          
+            Fecha limite
+            @Html.TextBoxFor(m => m.fechaLimite)
+          
+        </div> 
+        <div class="col-md-4">
+          
+            Fecha creacion
+            @Html.TextBoxFor(m => m.fechaCreacion)
+          
+        </div>
+        <div class="col-md-4">
+          
+            púntaje
+            @Html.TextBoxFor(m => m.puntaje)
+          
+        </div>
+        <div class="col-md-4">
+          
+            Descripcion
+            @Html.TextBoxFor(m => m.descripcion)
+             
+          
+        </div>
+          <div class="col-md-4">
+            
+              Id del emp correspondiente
+               @Html.TextBox("idEmpleado")
+            
+          </div>
+      </div>
+      <button type="submit" class="btn boton" href='@Url.Action("SubidaTareas","Home")'>Subir</button>
+    </div>
+}
