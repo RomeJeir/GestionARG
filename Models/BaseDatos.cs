@@ -12,11 +12,11 @@ namespace GestionARG.Models
     {
             private static List<Empleado> _ListaPersonas = new List<Empleado>();
             
-            private static string _connectionString = @"Server=DESKTOP-4CCAH31;DataBase=GestionARG;Trusted_Conecction=True;";
+            private static string _connectionString = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Conecction=True;";
             private static SqlConnection con;
         
 
-                private static void Conectar()
+        private static void Conectar()
         {
             string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
             con = new SqlConnection(cadena);
@@ -27,17 +27,6 @@ namespace GestionARG.Models
         {
             con.Close();
         }   
-        public static void SubidaTareas(){
-
-            using(SqlConnection db = new SqlConnection(_connectionString)){
-
-                string sql = "INSERT INTO Tareas";
-
-
-
-            }
-        }
-
 
         public static int SubirEmpleado(Empleado emp)
         {
@@ -52,10 +41,10 @@ namespace GestionARG.Models
             return cantidadFilasAfectada;
         }
 
-               public static int SubirTarea(Tarea tar)
+        public static int SubirTarea(Tarea tar)
         {
             Conectar();
-            string sentencia = "INSERT INTO Empleados (Nombre, FechaLimite, FechaCreacion, Puntaje, Descripcion, IdEmpleado) VALUES ('"+ tar.Nombre +"', "+ tar.FechaLimite +", '"+ tar.FechaCreacion + "', '"+ tar.Puntaje + "', '" + tar.Descripcion +"'," + tar.IdEmpleado + ")";
+            string sentencia = "INSERT INTO Tareas (Nombre, FechaLimite, FechaCreacion, Puntaje, Descripcion, IdEmpleado) VALUES ('"+ tar.nombre +"', "+ tar.fechaLimite +", '"+ tar.fechaCreacion + "', '"+ tar.puntaje + "', '" + tar.descripcion +"'," + tar.idEmpleado +")";
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
             Consulta.CommandType = CommandType.Text;

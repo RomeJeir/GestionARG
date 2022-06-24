@@ -4,81 +4,72 @@ namespace GestionARG.Models
 {
     public class Tarea
     {
-        private int _IdTarea;
-        private string _Nombre;
-        private DateTime _FechaLimite;
-        private DateTime _FechaCreacion;
-        private string _Puntaje;
-        private string _Descripcion;
-        private int _IdEmpleado;
+        private string _nombre;
+        private DateTime _fechaLimite;
+        private DateTime _fechaCreacion;
+        private string _puntaje;
+        private string _descripcion;
+        private int _idEmpleado;
 
-        public int IdTarea{
+        public string nombre{
             get{
-                return _IdTarea;
+                return _nombre;
             }
             set{
-                _IdTarea=value;
-            }
-        }
-        public string Nombre{
-            get{
-                return _Nombre;
-            }
-            set{
-                _Nombre=value;
+                _nombre=value;
             }
                 }
 
-         public DateTime FechaLimite{
+         public DateTime fechaLimite{
             get{
-                return _FechaLimite;
+                return _fechaLimite;
             }
             set{
-                _FechaLimite=value;
+                _fechaLimite=value;
             }
                     }
-        public DateTime FechaCreacion{
+        public DateTime fechaCreacion{
             get{
-                return _FechaCreacion;
+                return _fechaCreacion;
             }
             set{
-                _FechaCreacion=value;
+                _fechaCreacion=value;
             }
                 }
 
-        public string Puntaje{
+        public string puntaje{
             get{
-                return _Puntaje;
+                return _puntaje;
             }
             set{
-                _Puntaje=value;
+                _puntaje=value;
             }
                 }
-        public string Descripcion{
+        public string descripcion{
             get{
-                return _Descripcion;
+                return _descripcion;
             }
             set{
-                _Descripcion=value;
+                _descripcion=value;
             }
                 }
-                   public int IdEmpleado{
+        public int idEmpleado{
             get{
-                return _IdEmpleado;
+                return _idEmpleado;
             }
             set{
-                _IdEmpleado=value;
+                _idEmpleado=value;
             }
                 }
-        public Tarea (int IdTarea, string Nombre, DateTime FechaCreacion, DateTime FechaLimite, string Puntaje, string Descripcion, int IdEmpleado)
+
+        public Tarea (string nombre, DateTime fechaCreacion, DateTime fechaLimite, string puntaje, string descripcion, int idEmpleado)
         {
-            _IdTarea = IdTarea;
-            _Nombre = Nombre;
-            _FechaCreacion = FechaCreacion;
-            _FechaLimite = FechaLimite;
-            _Puntaje = Puntaje;
-            _Descripcion = Descripcion;
-            _IdEmpleado = IdEmpleado;
+            _nombre = nombre;
+            _fechaCreacion = fechaCreacion;
+            _fechaLimite = fechaLimite;
+            _puntaje = puntaje;
+            _descripcion = descripcion;
+            _idEmpleado = idEmpleado;
         }
     }
 }

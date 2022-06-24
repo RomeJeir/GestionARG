@@ -13,36 +13,42 @@
     <div class="row">
         <div class="col-md-4">
           <div class="form-group gallardo">
-            <label for="exampleInputEmail1" class="">Nombre</label> @Html.TextBox("Nombre")
+            <label for="exampleInputEmail1">Nombre 
+            @Html.TextBox("nombre")
           </div>
         </div>
         <div class="col-md-4">  
           <div class="form-group gallardo">
-            <label for="exampleInputPassword1">Fecha limite de la tarea</label> @Html.TextBox("FechaLimite")
+            <label for="exampleInputPassword1">Fecha limite de la tarea 
+            @Html.TextBox("fechaLimite")
           </div>
         </div> 
         <div class="col-md-4">
           <div class="form-group gallardo">
-            <label for="exampleInputPassword1">Fecha de hoy</label> @Html.TextBox("FechaCreacion")
+            <label for="exampleInputPassword1">Fecha de inicio 
+            @Html.TextBox("fechaCreacion")
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group gallardo">
-            <label for="exampleInputPassword1">Puntaje</label> @Html.TextBox("Puntaje")
+            <label for="exampleInputPassword1">Puntaje
+            @Html.TextBox("puntaje")
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group gallardo">
-            <label for="exampleFormControlTextarea1">Descripcion</label> @Html.TextBox("Descripcion")
+            <label for="exampleFormControlTextarea1">Descripcion
+             @Html.TextBox("descripcion")
           </div>
         </div>
           <div class="col-md-4">
             <div class="form-group gallardo">
-              <label for="exampleFormControlTextarea1">Id del empleado correspondiente</label> @Html.TextBox("IdEmpleado")
+              <label for="exampleFormControlTextarea1">Id del emp correspondiente
+               @Html.TextBox("idEmpleado")
             </div>
           </div>
       </div>
-      <button class="btn boton" href='@Url.Action("SubidaEmpleadosPOST","Home")'>Subir</button>
+      <button class="btn boton" href='@Url.Action("SubidaTareasPOST","Home")'>Subir</button>
     </div>
 </div>
 }

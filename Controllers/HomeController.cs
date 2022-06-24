@@ -44,7 +44,29 @@ public class HomeController : Controller
     public IActionResult SubidaTareas()
     {
         
-        return View();
+        return View("SubidaTareasPOST");
+    }
+    
+    [HttpPost]
+    public IActionResult SubidaTareasPOST(string nombre, DateTime fechaLimite, DateTime fechaCreacion, string puntaje, string descripcion, int idEmpleado){
+        {
+        try
+        {
+            Tarea tar = new Tarea(nombre,fechaLimite,fechaCreacion,puntaje,descripcion,idEmpleado);
+            int cantidadFilasAfectada = BaseDatos.SubirTarea(tar);
+            return View();
+
+        }
+
+        catch (System.Exception)
+         
+        {
+            return View();
+        }
+
+
+        }
+
     }
 
     public IActionResult SubidaEmpleados()
