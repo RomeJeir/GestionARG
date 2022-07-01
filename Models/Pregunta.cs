@@ -29,7 +29,7 @@ namespace GestionARG.Models
             
             public Pregunta(int idPregunta, string pregunta){
             _IdPregunta =IdPregunta;
-            _Pregunta=Pregunta;
+            _Pregunta=pregunta;
             }
 
 }
