@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Logging;
 using GestionARG.Models;
+using Google.Apis.Forms.v1;
 
 namespace GestionARG.Controllers{
 
@@ -88,5 +89,14 @@ public class HomeController : Controller
 
 
     }
+
+    public IActionResult Formulario(){
+
+        
+
+        return View();
+    }
 }
 }
+
+
