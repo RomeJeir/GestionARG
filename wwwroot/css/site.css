@@ -22,15 +22,15 @@ body {
 }
 
 #derecha{
-  margin-left: 40em;
+  margin-left: 40%;
 }
 
 .izquierda{
-  margin-left: 2em;
+  margin-left: 2%;
 }
 
 #derechita{
-  margin-left: 0.5em;
+  margin-left: 0.5%;
 }
 
 .LetraGrande{
@@ -43,7 +43,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 125px;
   color: rgb(255, 255, 255);
-  margin-top: 1.8em;
+  margin-top: 15%;
 }
 
 .LetraMenosGrande{
@@ -54,21 +54,21 @@ body {
 
 .tituloPrincipal{
   font-family: 'Courier New', Courier, monospace;
-  margin-top: 20px;
+  margin-top: 1%;
   color: white;
 }
 .titulo{
   font-family: 'Courier New', Courier, monospace;
-  margin-bottom: 20px;
-  margin-top: 30px;
+  margin-bottom: 2%;
+  margin-top: 3%;
   color: white;
 }
 
 .caja-control{
   background-color: #68CBCA;
   border-radius: 8px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 30%;
+  margin-top: 3%;
   height: 200px;
 }
 
@@ -79,8 +79,8 @@ body {
 .caja{
   background-color: #68CBCA;
   border-radius: 8px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 #logito{
@@ -112,7 +112,7 @@ h3{
 }
 
 .h4-margin{
-  margin-right: 400px;
+  margin-right: 400%;
 }
 
 #departamentos{
@@ -133,14 +133,14 @@ h3{
   }
 
 .h1-margin{
-  margin-bottom: 2em;
+  margin-bottom: 2%;
 }
 
 .boton{
   background-color: rgb(78, 173, 252);
   color: white;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .dos{
@@ -153,7 +153,7 @@ h3{
   background-color: #68CBCA;
   border-color: transparent;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 30px;
-  margin-top: 0.7em;
+  font-size: 20px;
+  margin-top: 0.7%;
   color: white;
 }
