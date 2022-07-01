@@ -5,9 +5,27 @@ namespace GestionARG.Models
     public class Respuesta
     {
         private int _IdRespuesta;
-        private string _Respuesta;
-        private string _IdPregunta;
+        private int _Respuesta;
+        private int _IdPregunta;
     
+
+    public int IdRespuesta{
+        get{
+            return _IdRespuesta;
+            }
+        set{
+            _IdRespuesta=value;
+        }
+        }
+
+    public int respuesta{
+        get{
+            return _Respuesta;
+        }
+        set{
+            _Respuesta=value;
+        }
+    }
 
     public int IdPregunta{
         get{
@@ -15,15 +33,6 @@ namespace GestionARG.Models
             }
         set{
             _IdPregunta=value;
-        }
-        }
-
-    public int Pregunta{
-        get{
-            return _DNI;
-            }
-        set{
-            _DNI=value;
             }
         }
 }

@@ -79,9 +79,11 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult SubidaEmpleadosPOST(string nombre, int dni, string area, string descripcion, string direccion, int idjefe)
     {
+        InitEmpleados();
         try
         {
             Empleado Emp = new Empleado(dni,nombre,area,descripcion,direccion,idjefe);
+            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
             int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
             return View();
 

@@ -34,7 +34,7 @@ namespace GestionARG.Models
         {
             Conectar();
             string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
-            ViewBag.ListaEmpleados = BD.ListarEmpleados();
+            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
             System.Console.WriteLine("La tarea es NULL");
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;

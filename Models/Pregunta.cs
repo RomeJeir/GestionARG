@@ -2,7 +2,7 @@ using System;
 
 namespace GestionARG.Models
 {
-    public class Preguna
+    public class Pregunta
     {
         private int _IdPregunta;
         private string _Pregunta;
@@ -17,13 +17,20 @@ namespace GestionARG.Models
             }
         }
 
-    public int Pregunta{
+
+    public string pregunta{
         get{
-            return _DNI;
+            return _Pregunta;
             }
         set{
-            _DNI=value;
+            _Pregunta=value;
             }
         }
+            
+            public Pregunta(int idPregunta, string pregunta){
+            _IdPregunta =IdPregunta;
+            _Pregunta=Pregunta;
+            }
+
 }
 }
