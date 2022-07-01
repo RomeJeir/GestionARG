@@ -1,12 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "/+QAaVd4k6dxMXpHsYbjywxi2W3qXersZhDwIwAsq0M5H2KMqs6EbBc+J97QTcSqoCl5GMli5OtqiNkXDRd7PQ==",
+  "dgSpecHash": "OoyAzxG1LCV9XrG8FL9fWqUm1ZF3eV65X2zkxWbqtltOkf0CPUiEp7rjYjFl8+426MTQ8fRU2yPpvTw2ojrMsw==",
   "success": true,
   "projectFilePath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\46583925\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\46583925\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",
+    "C:\\Users\\46583925\\.nuget\\packages\\google.apis.auth\\1.57.0\\google.apis.auth.1.57.0.nupkg.sha512",
+    "C:\\Users\\46583925\\.nuget\\packages\\google.apis.core\\1.57.0\\google.apis.core.1.57.0.nupkg.sha512",
+    "C:\\Users\\46583925\\.nuget\\packages\\google.apis.forms.v1\\1.57.0.2644\\google.apis.forms.v1.1.57.0.2644.nupkg.sha512",
     "C:\\Users\\46583925\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\46583925\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\46583925\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\46583925\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\46583925\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\46583925\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

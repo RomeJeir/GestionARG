@@ -45,10 +45,10 @@
           
         </div>
           <div class="col-md-4">
-            
-              Id del emp correspondiente
-               @Html.TextBox("idEmpleado")
-            
+            @foreach(Empleado UnEmpleado in ViewBag.ListaEmpleados)
+            {
+                <option value="@UnEmpleado.Nombre">@UnEmpleado.IdJefe</option>
+            }
           </div>
       </div>
       <button type="submit" class="btn boton" href='@Url.Action("SubidaTareas","Home")'>Subir</button>

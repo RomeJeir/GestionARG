@@ -6,7 +6,7 @@ namespace GestionARG.Models
     {
         private int _IdPregunta;
         private string _Pregunta;
-    }
+    
 
     public int IdPregunta{
         get{
@@ -25,4 +25,5 @@ namespace GestionARG.Models
             _DNI=value;
             }
         }
+}
 }

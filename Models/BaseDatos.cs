@@ -11,6 +11,8 @@ namespace GestionARG.Models
     public static class BaseDatos
     {
             private static List<Empleado> _ListaPersonas = new List<Empleado>();
+
+            private static List<Tarea> _ListaTarea = new List<Tarea>();
             
             private static string _connectionString = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Conecction=True;";
             private static SqlConnection con;
@@ -32,7 +34,7 @@ namespace GestionARG.Models
         {
             Conectar();
             string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
-
+            ViewBag.ListaEmpleados = BD.ListarEmpleados();
             System.Console.WriteLine("La tarea es NULL");
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;

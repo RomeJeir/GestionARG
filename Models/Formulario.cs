@@ -6,14 +6,13 @@ namespace GestionARG.Models
     {
         private int _IdFormulario;
         private int _IdEmpleado;
-        private int _FechaCreacion
-    }
+        private DateTime _FechaCreacion;
+
 
     public int IdFormulario{
         get{
             return _IdFormulario;
-            }
-        set{
+            }set{
             _IdFormulario=value;
             }
         }
@@ -27,12 +26,13 @@ namespace GestionARG.Models
             }
         }
 
-    public int FechaCreacion{
+    public DateTime FechaCreacion{
         get{
             return _FechaCreacion;
             }
-            set{
+        set{
             _FechaCreacion=value;
             }
         }
+}
 }
