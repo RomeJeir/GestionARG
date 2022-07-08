@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj": {}
+    "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj": {
+    "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
+        "projectUniqueName": "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj",
         "projectName": "GestionARG",
-        "projectPath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
-        "packagesPath": "C:\\Users\\46583925\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\obj\\",
+        "projectPath": "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj",
+        "packagesPath": "C:\\Users\\ezepo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\46583925\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ezepo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

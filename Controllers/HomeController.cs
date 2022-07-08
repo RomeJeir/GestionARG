@@ -14,11 +14,6 @@ namespace GestionARG.Controllers{
 
 public class HomeController : Controller
 {
-
-    private void InitEmpleados(){
-        ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
-    }
-
     public IActionResult Index()
     {
         return View();
@@ -73,13 +68,13 @@ public class HomeController : Controller
 
     public IActionResult SubidaEmpleados()
     {
+        ViewBag.ListaAreas = BaseDatos.ListarArea();
         return View("SubidaEmpleadosPOST");
     }
 
     [HttpPost]
     public IActionResult SubidaEmpleadosPOST(string nombre, int dni, string area, string descripcion, string direccion, int idjefe)
     {
-        InitEmpleados();
         try
         {
             Empleado Emp = new Empleado(dni,nombre,area,descripcion,direccion,idjefe);

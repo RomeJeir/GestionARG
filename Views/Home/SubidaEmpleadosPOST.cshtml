@@ -23,11 +23,17 @@
             <label for="exampleInputPassword1">DNI
             @Html.TextBox("dni")
           </div>
-        </div> 
+        </div>
         <div class="col-md-4">
           <div class="form-group gallardo">
             <label for="exampleInputPassword1">Area 
-            @Html.TextBox("area")
+            <select name="IdArea" class="form-control form-control-sm">
+              <option value=""></option>
+              @foreach(Area area in ViewBag.ListaAreas)
+              {
+                <option value="@area.IdArea">@area.Nombre</option>
+              }
+            </select>
           </div>
         </div>
         <div class="col-md-4">

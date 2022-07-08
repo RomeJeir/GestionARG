@@ -13,15 +13,16 @@ namespace GestionARG.Models
             private static List<Empleado> _ListaPersonas = new List<Empleado>();
 
             private static List<Tarea> _ListaTarea = new List<Tarea>();
+
+            private static List<Area> _ListaArea = new List<Area>();
             
-            private static string _connectionString = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Conecction=True;";
+            private static string _connectionString = @"Server=DESKTOP-ATBBITU\SQLEXPRESS;DataBase=GestionARG;trusted_connection=true";
             private static SqlConnection con;
         
 
         private static void Conectar()
         {
-            string cadena = @"Server=A-CIDI-106;DataBase=GestionARG;Trusted_Connection=True;";
-            con = new SqlConnection(cadena);
+            con = new SqlConnection(_connectionString);
             con.Open();
 
         }
@@ -34,7 +35,7 @@ namespace GestionARG.Models
         {
             Conectar();
             string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
-            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
+            var ListaEmpleados = BaseDatos.ListarEmpleados();
             System.Console.WriteLine("La tarea es NULL");
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
@@ -90,9 +91,26 @@ namespace GestionARG.Models
             da.Fill(dt);
             Desconectar();
             return dt;
-
-
         }
 
+        public static List<Empleado> ListarEmpleados()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Empleados";
+                
+                return db.Query<Empleado>(sql).ToList();
+            }
+        }
+
+        public static List<Area> ListarArea()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Areas";
+                
+                return db.Query<Area>(sql).ToList();
+            }
+        }
     }
 }
