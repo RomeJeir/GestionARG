@@ -9,6 +9,9 @@
       "GestionARG/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.123",
+          "Google.Apis": "1.57.0",
+          "Google.Apis.Auth": "1.57.0",
+          "Google.Apis.Discovery.v1": "1.57.0",
           "Google.Apis.Forms.v1": "1.57.0.2644",
           "System.Data.SqlClient": "4.8.3"
         },
@@ -57,6 +60,17 @@
         },
         "runtime": {
           "lib/netstandard2.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.57.0.0",
+            "fileVersion": "1.57.0.0"
+          }
+        }
+      },
+      "Google.Apis.Discovery.v1/1.57.0": {
+        "dependencies": {
+          "Google.Apis": "1.57.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Discovery.v1.dll": {
             "assemblyVersion": "1.57.0.0",
             "fileVersion": "1.57.0.0"
           }
@@ -192,6 +206,13 @@
       "sha512": "sha512-5wuY88PewhfaWsk37EEHcwU6CFqxpaWMm20ogWLXmaCw8NbTlV/Lna0gjtr2jpTLgb3mtVa7RC1AG/mgi530SQ==",
       "path": "google.apis.core/1.57.0",
       "hashPath": "google.apis.core.1.57.0.nupkg.sha512"
+    },
+    "Google.Apis.Discovery.v1/1.57.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lPwmIx8YII3uR4zPOOda6SqVxHi9G5jx8LfYnizwtcB3SMLGrAuFXnckxtwtGFcvQBwfNATmFgc6L+k6yHZ5iA==",
+      "path": "google.apis.discovery.v1/1.57.0",
+      "hashPath": "google.apis.discovery.v1.1.57.0.nupkg.sha512"
     },
     "Google.Apis.Forms.v1/1.57.0.2644": {
       "type": "package",

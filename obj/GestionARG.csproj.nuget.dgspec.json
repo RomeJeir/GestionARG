@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj": {}
+    "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj": {
+    "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj",
+        "projectUniqueName": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
         "projectName": "GestionARG",
-        "projectPath": "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\GestionARG.csproj",
-        "packagesPath": "C:\\Users\\ezepo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ezepo\\Downloads\\GestionARG-main\\obj\\",
+        "projectPath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
+        "packagesPath": "C:\\Users\\46583925\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\46583925\\Desktop\\GestionARG\\GestionARG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ezepo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\46583925\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,18 @@
               "target": "Package",
               "version": "[2.0.123, )"
             },
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.57.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.57.0, )"
+            },
+            "Google.Apis.Discovery.v1": {
+              "target": "Package",
+              "version": "[1.57.0, )"
+            },
             "Google.Apis.Forms.v1": {
               "target": "Package",
               "version": "[1.57.0.2644, )"
@@ -71,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

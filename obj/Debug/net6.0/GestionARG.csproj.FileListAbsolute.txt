@@ -132,3 +132,10 @@ C:\Users\ezepo\Downloads\GestionARG-main\obj\Debug\net6.0\scopedcss\projectbundl
 C:\Users\ezepo\Downloads\GestionARG-main\obj\Debug\net6.0\GestionARG.csproj.CopyComplete
 C:\Users\ezepo\Downloads\GestionARG-main\obj\Debug\net6.0\GestionARG.genruntimeconfig.cache
 C:\Users\ezepo\Downloads\GestionARG-main\obj\Debug\net6.0\ref\GestionARG.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Google.Apis.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Google.Apis.Auth.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Google.Apis.Core.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Google.Apis.Discovery.v1.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Google.Apis.Forms.v1.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\Newtonsoft.Json.dll
