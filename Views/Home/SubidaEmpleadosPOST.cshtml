@@ -4,8 +4,8 @@
 
 <div class="text-center">
     <h1 class="LetraGrande" id="departamentos">Subida de empleados</h1>
-    <h3 class="LetraMenosGrande">Escriba el area correspondiente del empleado que usted queire agregar. Luego coloque el ID del jefe correspondinte dependiendo de su area</h3>
-    <h4 class="LetraMenosGrande">Ventas (1) Compras (2) Administracion (3)</h4>
+    <h3 class="LetraMenosGrande">Escriba el area correspondiente del empleado que usted queire agregar.</h3>
+    <h4 class="LetraMenosGrande">Ventas (L) Compras (U) Administracion (M)</h4>
 </div>
 @using (Html.BeginForm("SubidaEmpleadosPOST", "Home", FormMethod.Post))
 {
@@ -50,9 +50,9 @@
         </div>
           <div class="col-md-4">
             <div class="form-group gallardo">
-              <label for="exampleFormControlTextarea1">Id del Jefe correspondiente</label>
+              <label for="exampleFormControlTextarea1">Jefe</label>
               
-              @Html.TextBox("idjefe")
+              @Html.DropDownList("idjefe", new SelectList(ViewBag.ListaJefes, "IdJefe", "Nombre"), string.Empty)
             </div>
           </div>
       </div>

@@ -10,12 +10,6 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-            private static List<Empleado> _ListaPersonas = new List<Empleado>();
-
-            private static List<Tarea> _ListaTarea = new List<Tarea>();
-
-            private static List<Area> _ListaArea = new List<Area>();
-            
             private static string _connectionString = @"Server=DESKTOP-ATBBITU\SQLEXPRESS;DataBase=GestionARG;trusted_connection=true";
             private static SqlConnection con;
         
@@ -34,7 +28,7 @@ namespace GestionARG.Models
         public static int SubirEmpleado(Empleado emp)
         {
             Conectar();
-            string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, AREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", '"+ emp.Area + "', '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
+            string sentencia = "INSERT INTO Empleados (NOMBRE, DNI, IDAREA, DESCRIPCION, DIRECCION, IDJEFE) VALUES ('"+ emp.Nombre +"', "+ emp.DNI +", "+ emp.IdArea + ", '"+ emp.Descripcion + "', '" + emp.Direccion +"'," + emp.IdJefe + ")";
             var ListaEmpleados = BaseDatos.ListarEmpleados();
             System.Console.WriteLine("La tarea es NULL");
             SqlCommand Consulta = con.CreateCommand();
@@ -86,7 +80,7 @@ namespace GestionARG.Models
         public static DataTable VerEmpleados()
         {
             Conectar();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT NOMBRE, DNI, AREA, DESCRIPCION FROM Empleados",con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT e.NOMBRE, e.DNI, e.IDAREA, a.Nombre as Area, e.DESCRIPCION FROM Empleados e join Areas a on e.idArea=a.idArea",con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             Desconectar();
@@ -110,6 +104,17 @@ namespace GestionARG.Models
                 string sql = "SELECT * FROM Areas";
                 
                 return db.Query<Area>(sql).ToList();
+            }
+        }
+
+        
+        public static List<Jefe> ListarJefe()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Jefes";
+                
+                return db.Query<Jefe>(sql).ToList();
             }
         }
     }

@@ -4,10 +4,11 @@ namespace GestionARG.Models
 {
     public class Empleado
     {
+        private int _IdEmpleado;
         private int _DNI;
         private string _Nombre;
         private string _Direccion;
-        private string _Area;
+        private int _IdArea;
         private string _Descripcion;
         private int _IdJefe;
 
@@ -35,14 +36,24 @@ namespace GestionARG.Models
                 _Nombre=value;
             }
                 }
-        public string Area{
+        public int IdArea{
             get{
-                return _Area;
+                return _IdArea;
             }
             set{
-                _Area=value;
+                _IdArea=value;
             }
                     }
+
+        public int IdEmpleado{
+            get{
+                return _IdEmpleado;
+            }
+            set{
+                _IdEmpleado=value;
+            }
+                    }
+        
         public string Descripcion{
             get{
                 return _Descripcion;
@@ -59,14 +70,21 @@ namespace GestionARG.Models
                 _IdJefe=value;
             }
                 }
-        public Empleado (int dni, string nombre, string area, string descripcion, string direccion, int idjefe)
+
+                //(System.Int32 IdEmpleado, System.Int32 DNI, System.String Nombre, System.String Descripcion, System.String Direccion, System.Int32 IdJefe, System.Int32 IdArea)
+        public Empleado (int idEmpleado, int dni, string nombre, string descripcion, string direccion, int idjefe, int idArea)
         {
+            _IdEmpleado=idEmpleado;
             _DNI = dni;
             _Nombre = nombre;
-            _Area=area;
             _Descripcion=descripcion;
             _Direccion=direccion;
             _IdJefe=idjefe;
+            _IdArea=idArea;
+        }
+
+        public Empleado(){
+
         }
     }
 }

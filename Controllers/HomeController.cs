@@ -72,24 +72,25 @@ public class HomeController : Controller
     public IActionResult SubidaEmpleados()
     {
         ViewBag.ListaAreas = BaseDatos.ListarArea();
+        ViewBag.ListaJefes = BaseDatos.ListarJefe();
         return View("SubidaEmpleadosPOST");
     }
 
     [HttpPost]
-    public IActionResult SubidaEmpleadosPOST(string nombre, int dni, string area, string descripcion, string direccion, int idjefe)
+    public IActionResult SubidaEmpleadosPOST(string nombre, int dni, int idArea, string descripcion, string direccion, int idjefe)
     {
-        try
-        {
-            Empleado Emp = new Empleado(dni,nombre,area,descripcion,direccion,idjefe);
-            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
+            Empleado Emp = new Empleado {
+                Nombre = nombre,
+                DNI=dni,
+                IdArea=idArea,
+                IdJefe=idjefe,
+                Direccion=direccion,
+                Descripcion=descripcion
+            };
+            //ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
             int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
             return View();
-
-        }
-        catch (System.Exception)
-        {
-            return View();
-        }
 
 
     }
@@ -99,7 +100,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public async Task<IActionResult> Google(){
+    /*public async Task<IActionResult> Google(){
         ClientSecrets secrets = new ClientSecrets()
         {
             ClientId = 320156936652-jk2u9rpcld5q7droid5o6sqs1ac5eto1.apps.googleusercontent.com,
@@ -128,7 +129,7 @@ public class HomeController : Controller
             var form = await formrequest.ExecuteAsync();
             
             return View ("Index");
-    }
+    }*/
 }
 }
 
