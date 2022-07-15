@@ -126,7 +126,7 @@ public class HomeController : Controller
                 });
 
             var Form = new Form();
-            Form.Items=IList<Item> Items {}
+            Form.Items=Item<QuestionItem>;
 
             var formResource = new FormsResource(service);
             var formrequest = formResource.Create(Form);
