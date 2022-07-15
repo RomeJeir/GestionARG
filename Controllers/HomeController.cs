@@ -126,8 +126,17 @@ public class HomeController : Controller
                 });
 
             var Form = new Form();
-            Form.Items=Item<QuestionItem>;
+            Form.Items= new List<Item> ();
+            Item item = new Item();
+            item.QuestionItem = new QuestionItem();
+            item.QuestionItem.Question = new Question();
+            item.QuestionItem.Question.TextQuestion = new TextQuestion();
+            item.QuestionItem.Question.TextQuestion.ETag = "¿Como estas?";
+            //armar item
+            Form.Items.Add(item);
 
+            Form.Info = new Info();
+            Form.Info.Description = new Description();
             var formResource = new FormsResource(service);
             var formrequest = formResource.Create(Form);
             var form = await formrequest.ExecuteAsync();
