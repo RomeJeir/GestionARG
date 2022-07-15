@@ -125,7 +125,7 @@ public class HomeController : Controller
                 });
 
             var formResource = new FormsResource(service);
-            var formrequest = formResource.Get("1NKQ9ma2ouRDIQLbBdITvbjAs4VXzupmlEzY5RiVgqWA");
+            var formrequest = formResource.Create();
             var form = await formrequest.ExecuteAsync();
             
             return View ("Index");
