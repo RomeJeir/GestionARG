@@ -180,3 +180,4 @@ C:\Users\ezepo\OneDrive\Documents\ProyectoFinal\GestionARG\obj\Debug\net6.0\scop
 C:\Users\ezepo\OneDrive\Documents\ProyectoFinal\GestionARG\obj\Debug\net6.0\GestionARG.csproj.CopyComplete
 C:\Users\ezepo\OneDrive\Documents\ProyectoFinal\GestionARG\obj\Debug\net6.0\GestionARG.genruntimeconfig.cache
 C:\Users\ezepo\OneDrive\Documents\ProyectoFinal\GestionARG\obj\Debug\net6.0\ref\GestionARG.dll
+C:\Users\46583925\Desktop\GestionARG\GestionARG\bin\Debug\net6.0\client_secret.json
