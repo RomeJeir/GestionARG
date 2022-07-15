@@ -18,6 +18,7 @@ using Google.Apis.Auth.OAuth2.Requests;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Util;
 using Google.Apis.Auth.OAuth2.Web;
+using Google.Apis.Forms.v1.Data;
 
 namespace GestionARG.Controllers{
 
@@ -124,8 +125,11 @@ public class HomeController : Controller
                     ApplicationName = "GestionARG",
                 });
 
+            var Form = new Form();
+            Form.Items=IList<Item> Items {}
+
             var formResource = new FormsResource(service);
-            var formrequest = formResource.Create();
+            var formrequest = formResource.Create(Form);
             var form = await formrequest.ExecuteAsync();
             
             return View ("Index");
