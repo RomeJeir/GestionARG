@@ -131,14 +131,15 @@ public class HomeController : Controller
             Form.Items= new List<Item> ();
             Item item = new Item();
             Form.Info = new Info();
-            Form.Info.Description = "Formulario de Romeo";
+            //Form.Info.Description = "Formulario de Romeo";
             Form.Info.Title="GestionARG";
-            Form.Info.DocumentTitle="GestionARG";
-            Form.Info.ETag="GestionARG";
+            //Form.Info.DocumentTitle="GestionARG";
+            //Form.Info.ETag="GestionARG";
             item.QuestionItem = new QuestionItem();
             item.QuestionItem.Question = new Question();
             item.QuestionItem.Question.TextQuestion = new TextQuestion();
-            item.QuestionItem.Question.TextQuestion.ETag = "¿Como estas?";
+            //item.QuestionItem.Question.TextQuestion.ETag = "Como estas";
+            item.QuestionItem.Question.TextQuestion.Paragraph = true;
 
             Form.Items.Add(item);
             var formResource = new FormsResource(service);
