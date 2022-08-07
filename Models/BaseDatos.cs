@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-            private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
+            private static string _connectionString = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Trusted_Connection=true";
             private static SqlConnection con;
         
 
