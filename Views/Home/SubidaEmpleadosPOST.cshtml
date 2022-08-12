@@ -4,8 +4,6 @@
 
 <div class="text-center">
     <h1 class="LetraGrande" id="departamentos">Subida de empleados</h1>
-    <h3 class="LetraMenosGrande">Escriba el area correspondiente del empleado que usted queire agregar.</h3>
-    <h4 class="LetraMenosGrande">Ventas (L) Compras (U) Administracion (M)</h4>
 </div>
 @using (Html.BeginForm("SubidaEmpleadosPOST", "Home", FormMethod.Post))
 {
@@ -30,7 +28,7 @@
         <div class="col-md-4">
           <div class="form-group gallardo">
             <label for="exampleInputPassword1">Area</label>
-            <select name="IdArea" class="form-control form-control-sm">
+            <select name="IdArea">
               <option value=""></option>
               @foreach(Area area in ViewBag.ListaAreas)
               {

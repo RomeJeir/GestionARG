@@ -716,19 +716,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ezepo\\.nuget\\packages\\": {}
+    "C:\\Users\\devandroid\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ezepo\\OneDrive\\Documents\\PF\\GestionARG\\GestionARG.csproj",
+      "projectUniqueName": "C:\\Users\\devandroid\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
       "projectName": "GestionARG",
-      "projectPath": "C:\\Users\\ezepo\\OneDrive\\Documents\\PF\\GestionARG\\GestionARG.csproj",
-      "packagesPath": "C:\\Users\\ezepo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ezepo\\OneDrive\\Documents\\PF\\GestionARG\\obj\\",
+      "projectPath": "C:\\Users\\devandroid\\Desktop\\GestionARG\\GestionARG\\GestionARG.csproj",
+      "packagesPath": "C:\\Users\\devandroid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\devandroid\\Desktop\\GestionARG\\GestionARG\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ezepo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\devandroid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -797,7 +802,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
