@@ -9,6 +9,9 @@
 </div>
 @using (Html.BeginForm("SubidaEmpleadosPOST", "Home", FormMethod.Post))
 {
+  @if(ViewBag.Mensaje!=null){
+  <div class="alert-primary">@ViewBag.Mensaje</div>
+  }
 <div class="text-center">
   <div class="container dos">
     <div class="row">
@@ -51,7 +54,6 @@
           <div class="col-md-4">
             <div class="form-group gallardo">
               <label for="exampleFormControlTextarea1">Jefe</label>
-              
               @Html.DropDownList("idjefe", new SelectList(ViewBag.ListaJefes, "IdJefe", "Nombre"), string.Empty)
             </div>
           </div>

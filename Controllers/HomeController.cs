@@ -55,6 +55,7 @@ public class HomeController : Controller
     {
         Tarea t = new Tarea();
         //t.nombre = "Romeo";
+        ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
         t.fechaCreacion = DateTime.Now;
         t.fechaLimite = t.fechaCreacion.AddDays(7);
         //t.descripcion ="ingrese";
@@ -62,17 +63,10 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult SubidaTareas(Tarea laTarea){ 
-
-        try {
-                //Tarea tar = new Tarea(nombre,fechaLimite,fechaCreacion,puntaje,descripcion,idEmpleado);
-                int cantidadFilasAfectada = BaseDatos.SubirTarea(laTarea);
-                
-
-        } catch (System.Exception){
-            //
-        }
-
+    public IActionResult SubidaTareas(Tarea laTarea){
+        int cantidadFilasAfectada = BaseDatos.SubirTarea(laTarea);
+        ViewBag.Mensaje = "La tarea se grabó correctamente";
+        ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
         return View(new Tarea());
     }
 
@@ -94,12 +88,12 @@ public class HomeController : Controller
                 Direccion=direccion,
                 Descripcion=descripcion
             };
-            //ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
-            ViewBag.ListaAreas = BaseDatos.ListarArea();
             int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
+            ViewBag.Mensaje = "El empleado se grabó correctamente";
+
+            ViewBag.ListaJefes = BaseDatos.ListarJefe();
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
             return View();
-
-
     }
 
     public IActionResult Formulario()
