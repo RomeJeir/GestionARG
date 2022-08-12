@@ -6,31 +6,38 @@ namespace GestionARG.Models
     {
         private int _IdPregunta;
         private string _Pregunta;
-    
 
-    public int IdPregunta{
-        get{
-           return _IdPregunta;
+
+        public int IdPregunta
+        {
+            get
+            {
+                return _IdPregunta;
             }
-        set{
-            _IdPregunta=value;
+            set
+            {
+                _IdPregunta = value;
             }
         }
 
 
-    public string pregunta{
-        get{
-            return _Pregunta;
+        public string pregunta
+        {
+            get
+            {
+                return _Pregunta;
             }
-        set{
-            _Pregunta=value;
+            set
+            {
+                _Pregunta = value;
             }
         }
-            
-            public Pregunta(int idPregunta, string pregunta){
-            _IdPregunta =IdPregunta;
-            _Pregunta=pregunta;
-            }
 
-}
+        public Pregunta(int idPregunta, string pregunta)
+        {
+            _IdPregunta = IdPregunta;
+            _Pregunta = pregunta;
+        }
+
+    }
 }

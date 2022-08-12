@@ -116,7 +116,6 @@ namespace GestionARG.Models
             }
         }
 
-
         public static List<Jefe> ListarJefe()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))

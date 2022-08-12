@@ -12,81 +12,103 @@ namespace GestionARG.Models
         private string _Descripcion;
         private int _IdJefe;
 
-        public int DNI{
-            get{
+        public int DNI
+        {
+            get
+            {
                 return _DNI;
             }
-            set{
-                _DNI=value;
+            set
+            {
+                _DNI = value;
             }
         }
-        public string Direccion{
-            get{
+        public string Direccion
+        {
+            get
+            {
                 return _Direccion;
             }
-            set{
-                _Direccion=value;
+            set
+            {
+                _Direccion = value;
             }
-                }
-        public string Nombre{
-            get{
+        }
+        public string Nombre
+        {
+            get
+            {
                 return _Nombre;
             }
-            set{
-                _Nombre=value;
+            set
+            {
+                _Nombre = value;
             }
-                }
-        public int IdArea{
-            get{
+        }
+        public int IdArea
+        {
+            get
+            {
                 return _IdArea;
             }
-            set{
-                _IdArea=value;
+            set
+            {
+                _IdArea = value;
             }
-                    }
-
-        public int IdEmpleado{
-            get{
-                return _IdEmpleado;
-            }
-            set{
-                _IdEmpleado=value;
-            }
-                    }
-        
-        public string Descripcion{
-            get{
-                return _Descripcion;
-            }
-            set{
-                _Descripcion=value;
-            }
-                }
-        public int IdJefe{
-            get{
-                return _IdJefe;
-            }
-            set{
-                _IdJefe=value;
-            }
-                }
-
-                //(System.Int32 IdEmpleado, System.Int32 DNI, System.String Nombre, System.String Descripcion, System.String Direccion, System.Int32 IdJefe, System.Int32 IdArea)
-        public Empleado (int idEmpleado, int dni, string nombre, string descripcion, string direccion, int idjefe, int idArea)
-        {
-            _IdEmpleado=idEmpleado;
-            _DNI = dni;
-            _Nombre = nombre;
-            _Descripcion=descripcion;
-            _Direccion=direccion;
-            _IdJefe=idjefe;
-            _IdArea=idArea;
         }
 
-        public Empleado(){
+        public int IdEmpleado
+        {
+            get
+            {
+                return _IdEmpleado;
+            }
+            set
+            {
+                _IdEmpleado = value;
+            }
+        }
+
+        public string Descripcion
+        {
+            get
+            {
+                return _Descripcion;
+            }
+            set
+            {
+                _Descripcion = value;
+            }
+        }
+        public int IdJefe
+        {
+            get
+            {
+                return _IdJefe;
+            }
+            set
+            {
+                _IdJefe = value;
+            }
+        }
+
+        //(System.Int32 IdEmpleado, System.Int32 DNI, System.String Nombre, System.String Descripcion, System.String Direccion, System.Int32 IdJefe, System.Int32 IdArea)
+        public Empleado(int idEmpleado, int dni, string nombre, string descripcion, string direccion, int idjefe, int idArea)
+        {
+            _IdEmpleado = idEmpleado;
+            _DNI = dni;
+            _Nombre = nombre;
+            _Descripcion = descripcion;
+            _Direccion = direccion;
+            _IdJefe = idjefe;
+            _IdArea = idArea;
+        }
+
+        public Empleado()
+        {
 
         }
     }
 }
-    
+
 

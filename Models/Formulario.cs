@@ -9,30 +9,40 @@ namespace GestionARG.Models
         private DateTime _FechaCreacion;
 
 
-    public int IdFormulario{
-        get{
-            return _IdFormulario;
-            }set{
-            _IdFormulario=value;
+        public int IdFormulario
+        {
+            get
+            {
+                return _IdFormulario;
+            }
+            set
+            {
+                _IdFormulario = value;
             }
         }
 
-    public int IdEmpleado{
-        get{
-            return _IdEmpleado;
+        public int IdEmpleado
+        {
+            get
+            {
+                return _IdEmpleado;
             }
-        set{
-            _IdEmpleado=value;
+            set
+            {
+                _IdEmpleado = value;
             }
         }
 
-    public DateTime FechaCreacion{
-        get{
-            return _FechaCreacion;
+        public DateTime FechaCreacion
+        {
+            get
+            {
+                return _FechaCreacion;
             }
-        set{
-            _FechaCreacion=value;
+            set
+            {
+                _FechaCreacion = value;
             }
         }
-}
+    }
 }

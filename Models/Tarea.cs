@@ -6,20 +6,20 @@ namespace GestionARG.Models
     public class Tarea
     {
         [DisplayName("Nombre")]
-        public string ?nombre  { get; set; }
-        
+        public string? nombre { get; set; }
+
         [DisplayName("Fecha Limite")]
-        public DateTime fechaLimite  { get; set; }
+        public DateTime fechaLimite { get; set; }
 
         [DisplayName("Fecha de Creacion")]
-        public DateTime fechaCreacion  { get; set; }
+        public DateTime fechaCreacion { get; set; }
 
         [DisplayName("Puntaje")]
-        public string ?puntaje  { get; set; }
+        public string? puntaje { get; set; }
 
         [DisplayName("Descr.")]
-        public string ?descripcion  { get; set; }
+        public string? descripcion { get; set; }
 
-        public int idEmpleado  { get; set; }
+        public int idEmpleado { get; set; }
     }
 }
