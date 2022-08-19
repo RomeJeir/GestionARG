@@ -21,5 +21,6 @@ namespace GestionARG.Models
         public string? descripcion { get; set; }
 
         public int idEmpleado { get; set; }
+        
     }
 }

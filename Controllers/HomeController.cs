@@ -96,7 +96,16 @@ namespace GestionARG.Controllers
 
             ViewBag.ListaJefes = BaseDatos.ListarJefe();
             ViewBag.ListaAreas = BaseDatos.ListarArea();
-            return View();
+            
+
+            //if(idArea == 3){
+
+            //Google();
+
+            //}else{
+
+                return View();
+            //}
         }
 
         public IActionResult Formulario()
@@ -123,27 +132,32 @@ namespace GestionARG.Controllers
                 ApplicationName = "GestionARG",
             });
 
-
+            
 
             var Form = new Form();
-            //Form.Items= new List<Item> ();
-            //Item item = new Item();
+            Form.Items= new List<Item> ();
+            
+            Item item = new Item();
             Form.Info = new Info();
-            //Form.Info.Description = "Formulario de Romeo";
-            Form.Info.Title = "GestionARG";
-            //Form.Info.DocumentTitle="GestionARG";
-            //Form.Info.ETag="GestionARG";
-            //item.QuestionItem = new QuestionItem();
-            //item.QuestionItem.Question = new Question();
-            //item.QuestionItem.Question.TextQuestion = new TextQuestion();
-            //item.QuestionItem.Question.TextQuestion.ETag = "Como estas";
-            //item.QuestionItem.Question.TextQuestion.Paragraph = true;
 
-            //Form.Items.Add(item);
+        
+        //public BatchUpdateRequest(IClientService service, BatchUpdateFormRequest body, string formId){
+
+            Form.Info.Description = "Formulario de Romeo";
+            Form.Info.DocumentTitle="GestionARG";
+            //Form.Info.ETag="GestionARG";
+            item.QuestionItem = new QuestionItem();
+            item.QuestionItem.Question = new Question();
+            item.QuestionItem.Question.TextQuestion = new TextQuestion();
+            //item.QuestionItem.Question.TextQuestion.ETag = "Como estas";
+            item.QuestionItem.Question.TextQuestion.Paragraph = true;
+
+            Form.Items.Add(item);
             var formResource = new FormsResource(service);
             var formrequest = formResource.Create(Form);
-            var form = await formrequest.ExecuteAsync();
+            //var form = await formrequest.ExecuteAsync();
 
+        //}
 
             return View("Index");
         }
