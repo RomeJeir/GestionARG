@@ -4,23 +4,18 @@ namespace GestionARG.Models
 {
     public class Jefe
     {
-        public int IdJefe { get; set; }
+        public int _IdJefe { get; set; }
 
-        public string Nombre { get; set; }
+        public string _Nombre { get; set; }
 
-        public int DNI { get; set; }
+        public int _DNI { get; set; }
 
 
         public Jefe(int IdJefe, string Nombre, int DNI)
         {
-            IdJefe = IdJefe;
-            Nombre = Nombre;
-            DNI = DNI;
-        }
-
-        public Jefe()
-        {
-
+            _IdJefe = IdJefe;
+            _Nombre = Nombre;
+            _DNI = DNI;
         }
     }
 }

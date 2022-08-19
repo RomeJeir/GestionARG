@@ -4,7 +4,7 @@ namespace GestionARG.Models
 {
     public class Area
     {
-        public int IdArea { get; set; }
+        public int _IdArea { get; set; }
 
         private string _Nombre;
 
@@ -22,13 +22,9 @@ namespace GestionARG.Models
 
         public Area(int idArea, string nombre)
         {
-            IdArea = idArea;
+            _IdArea = idArea;
             _Nombre = nombre;
         }
 
-        public Area()
-        {
-
-        }
     }
 }
