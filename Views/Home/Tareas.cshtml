@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Tareas";
+}
+<div class="text-center">
+  <h1 class="LetraGrande">Administración de Tareas</h1>
+</div>
+<div class="text-center">
+  <div class="container; caja-control">
+    <div class="row">
+        <div class="col-md-6">
+            <a href='@Url.Action("SubidaTareas","Home")' class="btn box-control">Crear tarea</a>
+        </div>
+        <div class="col-md-6">
+            <a href='@Url.Action("TareaHecha","Home")' class="btn box-control">Tareas hechas</a>
+        </div>
+    </div>
+  </div>
+</div>

@@ -125,5 +125,18 @@ namespace GestionARG.Models
                 return db.Query<Jefe>(sql).ToList();
             }
         }
+
+         public static List<Empleado> ListarEmpleadosVentas()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Empleados WHERE Area = 3";
+
+                return db.Query<Empleado>(sql).ToList();
+            }
+        }
+
+
+        
     }
 }

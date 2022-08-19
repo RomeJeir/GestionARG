@@ -16298,8 +16298,18 @@
   "RootNamespace": "GestionARG",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\devandroid\\Desktop\\GestionARG\\GestionARG\\Views\\Home\\TareaHecha.cshtml",
+      "TargetPath": "Views\\Home\\TareaHecha.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\devandroid\\Desktop\\GestionARG\\GestionARG\\Views\\Home\\VerEmpleados.cshtml",
       "TargetPath": "Views\\Home\\VerEmpleados.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\devandroid\\Desktop\\GestionARG\\GestionARG\\Views\\Home\\Tareas.cshtml",
+      "TargetPath": "Views\\Home\\Tareas.cshtml",
       "FileKind": "mvc"
     },
     {

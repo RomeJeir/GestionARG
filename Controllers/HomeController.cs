@@ -44,10 +44,21 @@ namespace GestionARG.Controllers
 
         public IActionResult DepartamentoVentas()
         {
+            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleadosVentas();
             return View();
         }
 
         public IActionResult DepartamentoAdministracion()
+        {
+            return View();
+        }
+        
+        public IActionResult Tareas()
+        {
+            return View();
+        }
+
+        public IActionResult TareaHecha()
         {
             return View();
         }
