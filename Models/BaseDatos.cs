@@ -126,21 +126,21 @@ namespace GestionARG.Models
             }
         }
 
-         public static List<Empleado> ListarEmpleadosVentas()
+         public static List<EmpleadoTarea> ListarEmpleadosVentas()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Empleados.Nombre, Tareas.Nombre FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = 3";
-                return db.Query<Empleado>(sql).ToList();
+                string sql = "SELECT Empleados.Nombre as NombreEmpleado, Tareas.Nombre as NombreTarea FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = 1";
+                return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
 
-         public static List<Empleado> ListarEmpleadosAdministracion()
+         public static List<EmpleadoTarea> ListarEmpleadosAdministracion()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Empleados.Nombre, Tareas.Nombre FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = ";
-                return db.Query<Empleado>(sql).ToList();
+                string sql = "SELECT Empleados.Nombre as NombreEmpleado, Tareas.Nombre as NombreTarea FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = 1";
+                return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
 

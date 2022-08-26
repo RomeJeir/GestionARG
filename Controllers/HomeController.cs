@@ -44,12 +44,13 @@ namespace GestionARG.Controllers
 
         public IActionResult DepartamentoVentas()
         {
-            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleadosVentas();
+            ViewBag.ListaEmpleadosTarea = BaseDatos.ListarEmpleadosVentas();
             return View();
         }
 
         public IActionResult DepartamentoAdministracion()
         {
+            ViewBag.ListaEmpleadosTarea = BaseDatos.ListarEmpleadosAdministracion();
             return View();
         }
         
@@ -124,7 +125,7 @@ namespace GestionARG.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Google()
+        public async Task<IActionResult> Google(Empleado emp)
         {
 
             UserCredential credential;
@@ -156,8 +157,6 @@ namespace GestionARG.Controllers
             var formrequest = formResource.Create(Form);
             var form = await formrequest.ExecuteAsync();
 
-            
-
             Form.Items.Add(item);
             var brequest = new BatchUpdateFormRequest();
             brequest.Requests = new List<Request>();
@@ -169,13 +168,15 @@ namespace GestionARG.Controllers
             request.CreateItem = createItem;
             brequest.Requests.Add(request);
 
-            item.Title="Como fue el desempeño de Fulano";
+            item.Title="¿Como fue el desempeño de ${emm}?";
             item.QuestionItem = new QuestionItem();
             item.QuestionItem.Question = new Question();
             item.QuestionItem.Question.ChoiceQuestion = new ChoiceQuestion();
             item.QuestionItem.Question.ChoiceQuestion.Options = new List<Option>();
-            item.QuestionItem.Question.ChoiceQuestion.Type = "";
+            item.QuestionItem.Question.ChoiceQuestion.Type = "CHECKBOX";
+            
             var option = new Option();
+
             option.Value= "Excelente";
             option.Value= "Muy Buena";
             option.Value= "Buena";
@@ -183,10 +184,10 @@ namespace GestionARG.Controllers
             option.Value= "Muy mala";
             option.Value= "Terrible";
 
+            item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
             var batchUpdate = new FormsResource.BatchUpdateRequest(service, brequest, form.FormId);
             await batchUpdate.ExecuteAsync();
             
-
             return View("Index");
         }
     }
