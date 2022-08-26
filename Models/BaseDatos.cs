@@ -130,8 +130,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Empleados WHERE Area = 3";
-
+                string sql = "SELECT Empleados.Nombre, Tareas.Nombre FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = 3";
                 return db.Query<Empleado>(sql).ToList();
             }
         }

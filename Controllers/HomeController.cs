@@ -151,24 +151,35 @@ namespace GestionARG.Controllers
             Item item = new Item();
             Form.Info = new Info();
 
-        
-        //public BatchUpdateRequest(IClientService service, BatchUpdateFormRequest body, string formId){
-
-            Form.Info.Description = "Formulario de Romeo";
+            //Form.Info.Description = "Formulario de Romeo";
             Form.Info.DocumentTitle="GestionARG";
+            Form.Info.Title="GestionARG";
             //Form.Info.ETag="GestionARG";
+            
+            var formResource = new FormsResource(service);
+            var formrequest = formResource.Create(Form);
+            var form = await formrequest.ExecuteAsync();
+
+            item.Title="Esto es una pregunta";
             item.QuestionItem = new QuestionItem();
             item.QuestionItem.Question = new Question();
             item.QuestionItem.Question.TextQuestion = new TextQuestion();
-            //item.QuestionItem.Question.TextQuestion.ETag = "Como estas";
             item.QuestionItem.Question.TextQuestion.Paragraph = true;
 
             Form.Items.Add(item);
-            var formResource = new FormsResource(service);
-            var formrequest = formResource.Create(Form);
-            //var form = await formrequest.ExecuteAsync();
+            var brequest = new BatchUpdateFormRequest();
+            brequest.Requests = new List<Request>();
+            var request = new Request();
+            var createItem = new CreateItemRequest();
+            createItem.Item= item;
+            createItem.Location = new Location();
+            createItem.Location.Index = 0;
+            request.CreateItem = createItem;
+            brequest.Requests.Add(request);
 
-        //}
+            var batchUpdate = new FormsResource.BatchUpdateRequest(service, brequest, form.FormId);
+            await batchUpdate.ExecuteAsync();
+            
 
             return View("Index");
         }
