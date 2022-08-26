@@ -143,28 +143,20 @@ namespace GestionARG.Controllers
                 ApplicationName = "GestionARG",
             });
 
-            
-
             var Form = new Form();
             Form.Items= new List<Item> ();
             
             Item item = new Item();
             Form.Info = new Info();
 
-            //Form.Info.Description = "Formulario de Romeo";
             Form.Info.DocumentTitle="GestionARG";
             Form.Info.Title="GestionARG";
-            //Form.Info.ETag="GestionARG";
             
             var formResource = new FormsResource(service);
             var formrequest = formResource.Create(Form);
             var form = await formrequest.ExecuteAsync();
 
-            item.Title="Esto es una pregunta";
-            item.QuestionItem = new QuestionItem();
-            item.QuestionItem.Question = new Question();
-            item.QuestionItem.Question.TextQuestion = new TextQuestion();
-            item.QuestionItem.Question.TextQuestion.Paragraph = true;
+            
 
             Form.Items.Add(item);
             var brequest = new BatchUpdateFormRequest();
@@ -176,6 +168,20 @@ namespace GestionARG.Controllers
             createItem.Location.Index = 0;
             request.CreateItem = createItem;
             brequest.Requests.Add(request);
+
+            item.Title="Como fue el desempeño de Fulano";
+            item.QuestionItem = new QuestionItem();
+            item.QuestionItem.Question = new Question();
+            item.QuestionItem.Question.ChoiceQuestion = new ChoiceQuestion();
+            item.QuestionItem.Question.ChoiceQuestion.Options = new List<Option>();
+            item.QuestionItem.Question.ChoiceQuestion.Type = "";
+            var option = new Option();
+            option.Value= "Excelente";
+            option.Value= "Muy Buena";
+            option.Value= "Buena";
+            option.Value= "Mala";
+            option.Value= "Muy mala";
+            option.Value= "Terrible";
 
             var batchUpdate = new FormsResource.BatchUpdateRequest(service, brequest, form.FormId);
             await batchUpdate.ExecuteAsync();
