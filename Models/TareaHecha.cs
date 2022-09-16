@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace GestionARG.Models
 {
-    public class Tarea
+    public class TareaHecha
     {
         [DisplayName("Nombre")]
         public string? nombre { get; set; }
@@ -15,14 +15,14 @@ namespace GestionARG.Models
         public string puntaje { get; set; }
 
         [DisplayName("Descr.")]
-        public string descripcion { get; set; }
-
-        public int idArea { get ; set; }
+        public string? descripcion { get; set; }
 
         public int idEmpleado { get; set; }
 
         public int idTarea { get; set; }
 
         public int idTareaRealizada { get; set; }
+        
     }
+    
 }

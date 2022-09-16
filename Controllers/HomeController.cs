@@ -73,7 +73,6 @@ namespace GestionARG.Controllers
             Tarea t = new Tarea();
             //t.nombre = "Romeo";
             t.fechaCreacion = DateTime.Now;
-            t.fechaLimite = t.fechaCreacion.AddDays(7);
             //t.descripcion ="ingrese";
             return View(t);
         }
@@ -188,7 +187,7 @@ namespace GestionARG.Controllers
                 Descripcion = descripcion
             };*/
             int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
-            ViewBag.Mensaje = "El empleado se grabó correctamente";
+            ViewBag.Mensaje = "El empleado se grabo correctamente";
 
             ViewBag.ListaJefes = BaseDatos.ListarJefe();
             ViewBag.ListaAreas = BaseDatos.ListarArea();

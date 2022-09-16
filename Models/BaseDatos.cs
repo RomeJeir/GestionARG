@@ -75,7 +75,7 @@ namespace GestionARG.Models
         {
             Conectar();
             //string sentencia2 = 
-            string sentencia = "INSERT INTO Tareas (NOMBRE) VALUES (" + ToSQLString(tar.nombre) + ")";
+            string sentencia = "INSERT INTO Tarea (NOMBRE, IDAREA) VALUES (" + ToSQLString(tar.nombre) + " , " + tar.idArea + ")";
             var ListaTareas = BaseDatos.ListarTareas();
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
@@ -89,7 +89,7 @@ namespace GestionARG.Models
         public static int SubirTareaHecha(Tarea tar)
         {
             Conectar();
-            string sentencia = "INSERT INTO Tareas (IDTAREAREALIZADA, FECHACREACION, PUNTAJE, IDTAREA, IDEMPLEADO) VALUES (" + tar.idTareaRealizada + ", " + ToSQLDate(tar.fechaCreacion) + ", " + ToSQLString(tar.puntaje) + ",  " + tar.idTarea + " , " + tar.idEmpleado + ")";
+            string sentencia = "INSERT INTO TareasRealizadas (IDTAREAREALIZADA, FECHACREACION, PUNTAJE, IDTAREA, IDEMPLEADO) VALUES (" + tar.idTareaRealizada + ", " + ToSQLDate(tar.fechaCreacion) + ", " + ToSQLString(tar.puntaje) + ",  " + tar.idTarea + " , " + tar.idEmpleado + ")";
             var ListaTareas = BaseDatos.ListarTareas();
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
@@ -144,7 +144,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Tarea.Nombre as NombreTarea, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion, Empleados.Nombre From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Area = 1";
+                string sql = "SELECT Tarea.Nombre as NombreTarea, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion, Empleados.Nombre From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Tarea.IdzArea = 1";
                 return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
@@ -153,7 +153,8 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Tarea.Nombre as TareaNombre, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion as Fecha, Empleados.Nombre as NombreEmpleado From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Area = 3";
+                string sql = "SELECT Tarea.Nombre as TareaNombre, TareasRealizadas.Puntaje as PuntajeTareas, "+
+                "TareasRealizadas.FechaCreacion as Fecha, Empleados.Nombre as NombreEmpleado From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Tarea.IdArea = 3";
                 return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
