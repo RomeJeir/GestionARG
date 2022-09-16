@@ -1,27 +1,43 @@
+@using System.Data;
+@model DataTable;
 @{
     ViewData["Title"] = "Administración";
 }
 
 <div class="text-center">
-    <h1 class="LetraGrande" id="departamentos">Departamentos</h1>
+  <h1 class="LetraGrande">Listado de empleados</h1>
 </div>
 <div class="text-center">
-  <div class="container; caja-control">
-    <div class="row">
-        <div class="col-md-4">
-            <a href='@Url.Action("DepartamentoVentas","Home")' class="btn box-control">Departamento de ventas</a>
-        </div>
-        <div class="col-md-4">
-            <a href="" class="btn box-control">Departamento de compras</a>
-        </div>
-        <div class="col-md-4">
-            <a href='@Url.Action("DepartamentoAdministracion","Home")' class="btn box-control">Administración</a>
-        </div>
-    </div>
-  </div>
-  <h1 class="LetraGrande">Administración hecha</h1>
   <div class="container; caja">
-      <div class="row">
+    <div class="row">
+      <div class="col-md-5">
+        <h2 class="titulo">Nombre del empleado</h2>
       </div>
+      <div class="col-md-7">
+        <h2 class="titulo">Datos y descripción</h2>
+      </div>
+      <div class="text-center">
+      @foreach (DataRow r in Model.Rows)
+            {
+              <div class="container">
+                <div class="row"><hr>
+                  <div class="col-md-5">
+                    <h3 class="lisgrup">
+                        @Convert.ToString(r["NombreEmpleado"])
+                    </h3>
+                  </div> 
+                  <div class="col-md-7">
+                    <ul class="list-group">
+                      <li class="list-group-item lisgrup"><span><p>Nombre:</p></span>@Convert.ToString(r["NombreEmpleado"])
+                      <li class="list-group-item lisgrup"><span><p>Tareas:</p></span>@Convert.ToString(r["TareaNombre"])
+                      <br>
+                    </ul>
+                  </div>  
+                </div>
+              </div>
+            }
+        </div> 
+      </div>
+    </div>
   </div>
 </div>

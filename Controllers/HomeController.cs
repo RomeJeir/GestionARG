@@ -61,14 +61,17 @@ namespace GestionARG.Controllers
 
         public IActionResult TareaHecha()
         {
+            ViewBag.ListaTareas = BaseDatos.ListarTareas();
+            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
             return View();
         }
 
         public IActionResult SubidaTareas()
         {
+            
+            ViewBag.ListaTareas = BaseDatos.ListarTareas();
             Tarea t = new Tarea();
             //t.nombre = "Romeo";
-            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
             t.fechaCreacion = DateTime.Now;
             t.fechaLimite = t.fechaCreacion.AddDays(7);
             //t.descripcion ="ingrese";
@@ -80,7 +83,6 @@ namespace GestionARG.Controllers
         {
             int cantidadFilasAfectada = BaseDatos.SubirTarea(laTarea);
             ViewBag.Mensaje = "La tarea se grabó correctamente";
-            ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
             return View(new Tarea());
         }
 
@@ -88,41 +90,9 @@ namespace GestionARG.Controllers
         {
             ViewBag.ListaAreas = BaseDatos.ListarArea();
             ViewBag.ListaJefes = BaseDatos.ListarJefe();
-            return View("SubidaEmpleadosPOST");
-        }
-
-        [HttpPost]
-        public IActionResult SubidaEmpleadosPOST(string nombre, int dni, int idArea, string descripcion, string direccion, int idjefe)
-        {
-            Empleado Emp = new Empleado
-            {
-                Nombre = nombre,
-                DNI = dni,
-                IdArea = idArea,
-                IdJefe = idjefe,
-                Direccion = direccion,
-                Descripcion = descripcion
-            };
-            int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
-            ViewBag.Mensaje = "El empleado se grabó correctamente";
-
-            ViewBag.ListaJefes = BaseDatos.ListarJefe();
-            ViewBag.ListaAreas = BaseDatos.ListarArea();
-            
-
-            //if(idArea == 3){
-
-            //Google();
-
-            //}else{
-
-                return View();
-            //}
-        }
-
-        public IActionResult Formulario()
-        {
+            //return View("SubidaEmpleadosPOST");
             return View();
+            //return Ok("!test");
         }
 
         public async Task<IActionResult> Google(Empleado emp)
@@ -168,7 +138,7 @@ namespace GestionARG.Controllers
             request.CreateItem = createItem;
             brequest.Requests.Add(request);
 
-            item.Title="¿Como fue el desempeño de ${emm}?";
+            item.Title="¿Como fue el desempeño del vendedor?";
             item.QuestionItem = new QuestionItem();
             item.QuestionItem.Question = new Question();
             item.QuestionItem.Question.ChoiceQuestion = new ChoiceQuestion();
@@ -176,19 +146,68 @@ namespace GestionARG.Controllers
             item.QuestionItem.Question.ChoiceQuestion.Type = "CHECKBOX";
             
             var option = new Option();
-
             option.Value= "Excelente";
-            option.Value= "Muy Buena";
-            option.Value= "Buena";
-            option.Value= "Mala";
-            option.Value= "Muy mala";
-            option.Value= "Terrible";
-
             item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
+            
+            option = new Option();
+            option.Value= "Muy Buena";
+            item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
+            
+            option = new Option();
+            option.Value= "Buena";
+            item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
+
+            option = new Option();
+            option.Value= "Mala";
+            item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
+
+            option = new Option();
+            option.Value= "Muy mala";
+            item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
+
+            option = new Option();
+            option.Value= "Terrible";
+            item.QuestionItem.Question.ChoiceQuestion.Options.Add(option);
+
             var batchUpdate = new FormsResource.BatchUpdateRequest(service, brequest, form.FormId);
             await batchUpdate.ExecuteAsync();
             
             return View("Index");
         }
+
+        [HttpPost]
+        public IActionResult SubidaEmpleadosPOST(string nombre, int dni, int idArea, string descripcion, string direccion, int idjefe)
+        {
+            Empleado Emp = new Empleado();
+            /*{
+                Nombre = nombre,
+                DNI = dni,
+                IdArea = idArea,
+                IdJefe = idjefe,
+                Direccion = direccion,
+                Descripcion = descripcion
+            };*/
+            int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
+            ViewBag.Mensaje = "El empleado se grabó correctamente";
+
+            ViewBag.ListaJefes = BaseDatos.ListarJefe();
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
+            
+
+            //if(idArea == 1){
+
+            //Google();
+
+            //}else{
+
+                return View();
+            //}
+        }
+
+        public IActionResult Formulario()
+        {
+            return View();
+        }
+
     }
 }                    

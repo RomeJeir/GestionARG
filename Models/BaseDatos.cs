@@ -74,12 +74,26 @@ namespace GestionARG.Models
         public static int SubirTarea(Tarea tar)
         {
             Conectar();
-            string sentencia = "INSERT INTO Tareas (NOMBRE, FECHALIMITE, FECHACREACION, PUNTAJE, DESCRIPCION, IDEMPLEADO) VALUES (" + ToSQLString(tar.nombre) + ", " + ToSQLDate(tar.fechaLimite) + ",  " + ToSQLDate(tar.fechaCreacion) + ", " + ToSQLString(tar.puntaje) + ", " + ToSQLString(tar.descripcion) + " , " + tar.idEmpleado + ")";
-
+            //string sentencia2 = 
+            string sentencia = "INSERT INTO Tareas (NOMBRE) VALUES (" + ToSQLString(tar.nombre) + ")";
+            var ListaTareas = BaseDatos.ListarTareas();
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
             Consulta.CommandType = CommandType.Text;
+            int cantidadFilasAfectada = Consulta.ExecuteNonQuery();
+            Desconectar();
+            return cantidadFilasAfectada;
+        }
 
+
+        public static int SubirTareaHecha(Tarea tar)
+        {
+            Conectar();
+            string sentencia = "INSERT INTO Tareas (IDTAREAREALIZADA, FECHACREACION, PUNTAJE, IDTAREA, IDEMPLEADO) VALUES (" + tar.idTareaRealizada + ", " + ToSQLDate(tar.fechaCreacion) + ", " + ToSQLString(tar.puntaje) + ",  " + tar.idTarea + " , " + tar.idEmpleado + ")";
+            var ListaTareas = BaseDatos.ListarTareas();
+            SqlCommand Consulta = con.CreateCommand();
+            Consulta.CommandText = sentencia;
+            Consulta.CommandType = CommandType.Text;
             int cantidadFilasAfectada = Consulta.ExecuteNonQuery();
             Desconectar();
             return cantidadFilasAfectada;
@@ -130,7 +144,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Empleados.Nombre as NombreEmpleado, Tareas.Nombre as NombreTarea FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = 1";
+                string sql = "SELECT Tarea.Nombre as NombreTarea, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion, Empleados.Nombre From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Area = 1";
                 return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
@@ -139,8 +153,18 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Empleados.Nombre as NombreEmpleado, Tareas.Nombre as NombreTarea FROM Empleados INNER JOIN Tareas on Tareas.IdEmpleado = Empleados.IdEmpleado WHERE Area = 1";
+                string sql = "SELECT Tarea.Nombre as TareaNombre, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion as Fecha, Empleados.Nombre as NombreEmpleado From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Area = 3";
                 return db.Query<EmpleadoTarea>(sql).ToList();
+            }
+        }
+
+        public static List<Tarea> ListarTareas()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Tarea";
+
+                return db.Query<Tarea>(sql).ToList();
             }
         }
 

@@ -35,28 +35,19 @@
             @Html.TextBoxFor(m => m.fechaCreacion, "{0:dd/MM/yyyy}")
           
         </div>
-        <div class="col-md-4">
-          
-            Puntaje
-            @Html.TextBoxFor(m => m.puntaje)
-          
-        </div>
+        <label for="exampleInputPassword1">Area</label>
+            <select name="IdArea">
+              <option value=""></option>
+              @foreach(Area area in ViewBag.ListaAreas)
+              {
+                <option value="@area._IdArea">@area.Nombre</option>
+              }
+            </select>
         <div class="col-md-4">
           
             Descripcion
             @Html.TextBoxFor(m => m.descripcion)
-             
-          
-        </div>
-          <div class="col-md-4">
-            <div class="form-group gallardo">
-              <label for="exampleFormControlTextarea1">Empleado</label>
-              @Html.DropDownList("idempleado", new SelectList(ViewBag.ListaEmpleados, "IdEmpleado", "Nombre"), string.Empty)
-            </div>
-          </div>
-
-         
-
+        </div>      
       </div>
       <button type="submit" class="btn boton" href='@Url.Action("SubidaTareas","Home")'>Subir</button>
     </div>
