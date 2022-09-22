@@ -54,5 +54,8 @@ namespace GestionARG.Models
             _IdJefe = IdJefe;
         }
 
+        public Area(){
+            
+        }
     }
 }
