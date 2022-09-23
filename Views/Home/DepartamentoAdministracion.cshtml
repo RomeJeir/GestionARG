@@ -1,5 +1,6 @@
 @using System.Data;
-@model DataTable;
+@using GestionARG.Models;
+
 @{
     ViewData["Title"] = "Administración";
     List<EmpleadoTarea> listita =  ViewBag.ListaEmpleadosTarea ;
@@ -29,8 +30,8 @@
                   </div>
                       <div class="col-md-7">
                           <ul class="list-group">
-                            <li class="list-group-item lisgrup"><span><p>DNI:</p></span>@objeto.PuntajeTareas
-                            <li class="list-group-item lisgrup"><span><p>Area:</p></span>@objeto.PuntajeTareas 
+                            <li class="list-group-item lisgrup"><span><p> Nombre de la Tarea:</p></span>@objeto.TareaNombre
+                            <li class="list-group-item lisgrup"><span><p>Devolucion</p></span>@objeto.PuntajeTareas 
                             <li class="list-group-item lisgrup"><span><p>Descripción:</p></span>@objeto.PuntajeTareas
                             <br>
                           </ul>

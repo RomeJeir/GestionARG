@@ -50,12 +50,15 @@ namespace GestionARG.Controllers
 
         public IActionResult DepartamentoAdministracion()
         {
-            ViewBag.ListaEmpleadosTarea = BaseDatos.ListarEmpleadosAdministracion();
+            List<EmpleadoTarea> datos = BaseDatos.ListarEmpleadosAdministracion();
+            ViewBag.ListaEmpleadosTarea = datos;
+
             return View();
         }
         
         public IActionResult Tareas()
         {
+            ViewBag.ListaTareas = BaseDatos.ListarTareas();
             return View();
         }
 
@@ -89,9 +92,7 @@ namespace GestionARG.Controllers
         {
             ViewBag.ListaAreas = BaseDatos.ListarArea();
             ViewBag.ListaJefes = BaseDatos.ListarJefe();
-            //return View("SubidaEmpleadosPOST");
             return View();
-            //return Ok("!test");
         }
 
         public async Task<IActionResult> Google(Empleado emp)
@@ -177,15 +178,15 @@ namespace GestionARG.Controllers
         [HttpPost]
         public IActionResult SubidaEmpleadosPOST(string nombre, int dni, int idArea, string descripcion, string direccion, int idjefe)
         {
-            Empleado Emp = new Empleado();
-            /*{
+            Empleado Emp = new Empleado()
+            {
                 Nombre = nombre,
                 DNI = dni,
                 IdArea = idArea,
                 IdJefe = idjefe,
                 Direccion = direccion,
                 Descripcion = descripcion
-            };*/
+            };
             int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
             ViewBag.Mensaje = "El empleado se grabo correctamente";
 
@@ -199,7 +200,7 @@ namespace GestionARG.Controllers
 
             //}else{
 
-                return View();
+               return View("SubidaEmpleados");
             //}
         }
 

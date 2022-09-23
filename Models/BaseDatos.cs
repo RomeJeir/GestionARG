@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=A-PHZ2-LUM-16;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -35,7 +35,6 @@ namespace GestionARG.Models
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
             Consulta.CommandType = CommandType.Text;
-
             int cantidadFilasAfectada = Consulta.ExecuteNonQuery();
             Desconectar();
             return cantidadFilasAfectada;
@@ -144,7 +143,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Tarea.Nombre as NombreTarea, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion, Empleados.Nombre From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Tarea.IdzArea = 1";
+                string sql = "SELECT Tarea.Nombre as NombreTarea, TareasRealizadas.Puntaje as PuntajeTareas, TareasRealizadas.FechaCreacion, Empleados.Nombre From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Tarea.IdArea = 1";
                 return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }

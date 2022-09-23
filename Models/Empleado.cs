@@ -92,7 +92,6 @@ namespace GestionARG.Models
             }
         }
 
-        //(System.Int32 IdEmpleado, System.Int32 DNI, System.String Nombre, System.String Descripcion, System.String Direccion, System.Int32 IdJefe, System.Int32 IdArea)
         public Empleado(int idEmpleado, int dni, string nombre, string descripcion, string direccion, int idjefe, int idArea)
         {
             _IdEmpleado = idEmpleado;

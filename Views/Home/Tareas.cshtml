@@ -15,4 +15,27 @@
         </div>
     </div>
   </div>
+  <div>
+    <div class="text-center">
+      <h1 class="LetraGrande">Listado de Tareas</h1>
+    </div>
+    @foreach (ViewBag.ListaTareas){
+      <div class="container">
+        <div class="row"><hr>
+          <div class="col-md-5">
+            <h3 class="lisgrup">
+              @Convert.ToString(r["Nombre"])
+            </h3>
+          </div> 
+          <div class="col-md-7">
+            <ul class="list-group">
+              <li class="list-group-item lisgrup"><span><p>DNI:</p></span>@Convert.ToString(r["DNI"])
+              <li class="list-group-item lisgrup"><span><p>Area:</p></span>@Convert.ToString(r["Area"]) 
+              <li class="list-group-item lisgrup"><span><p>Descripción:</p></span>@Convert.ToString(r["Descripcion"])
+              <br>
+            </ul>
+          </div>  
+        </div>
+      </div>
+    }
 </div>
