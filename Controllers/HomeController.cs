@@ -42,9 +42,10 @@ namespace GestionARG.Controllers
             return View();
         }
 
-        public IActionResult DepartamentoVentas()
+        public IActionResult DepartamentoCompras()
         {
-            ViewBag.ListaEmpleadosTarea = BaseDatos.ListarEmpleadosVentas();
+           List<EmpleadoTarea> datos = BaseDatos.ListarEmpleadosCompras();
+            ViewBag.ListaEmpleadosTarea = datos;
             return View();
         }
 
@@ -52,7 +53,6 @@ namespace GestionARG.Controllers
         {
             List<EmpleadoTarea> datos = BaseDatos.ListarEmpleadosAdministracion();
             ViewBag.ListaEmpleadosTarea = datos;
-
             return View();
         }
         
@@ -188,20 +188,21 @@ namespace GestionARG.Controllers
                 Descripcion = descripcion
             };
             int cantidadFilasAfectada = BaseDatos.SubirEmpleado(Emp);
-            ViewBag.Mensaje = "El empleado se grabo correctamente";
+
 
             ViewBag.ListaJefes = BaseDatos.ListarJefe();
             ViewBag.ListaAreas = BaseDatos.ListarArea();
             
 
-            //if(idArea == 1){
+            if(idArea == 3 ){
 
-            //Google();
+            Google(Emp);
+            return View("SubidaEmpleados");
 
-            //}else{
+            }else{
 
                return View("SubidaEmpleados");
-            //}
+            }
         }
 
         public IActionResult Formulario()

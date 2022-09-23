@@ -1,27 +1,46 @@
+@using System.Data;
+@using GestionARG.Models;
+
 @{
-    ViewData["Title"] = "Departamento de ventas";
+    ViewData["Title"] = "Ventas";
+    List<EmpleadoTarea> listita =  ViewBag.ListaEmpleadosTarea ;
 }
 
 <div class="text-center">
-    <h1 class="LetraGrande" id="departamentos">Departamentos</h1>
+  <h1 class="LetraGrande">Empleados de Ventas</h1>
 </div>
 <div class="text-center">
-  <div class="container; caja-control">
-    <div class="row">
-        <div class="col-md-4">
-            <a href='@Url.Action("DepartamentoVentas","Home")' class="btn box-control">Departamento de venta</a>
-        </div>
-        <div class="col-md-4">
-            <a href="" class="btn box-control">Departamento de compras</a>
-        </div>
-        <div class="col-md-4">
-            <a href='@Url.Action("DepartamentoAdministracion","Home")' class="btn box-control">Administración</a>
-        </div>
-    </div>
-  </div>
-  <h1 class="LetraGrande">Ventas recientes</h1>
   <div class="container; caja">
-      <div class="row">
+    <div class="row">
+      <div class="col-md-5">
+        <h2 class="titulo">Nombre del empleado</h2>
       </div>
+      <div class="col-md-7">
+        <h2 class="titulo">Datos</h2>
+      </div>
+      <div class="text-center">
+      @foreach (EmpleadoTarea objeto in listita)
+            {
+              <div class="container">
+                <div class="row"><hr>
+                  <div class="col-md-5">
+                    <h3 class="lisgrup">
+                        @objeto.NombreEmpleado
+                    </h3>
+                  </div>
+                      <div class="col-md-7">
+                          <ul class="list-group">
+                            <li class="list-group-item lisgrup"><span><p> Nombre de la Tarea:</p></span>@objeto.TareaNombre
+                            <li class="list-group-item lisgrup"><span><p>De</p></span>@objeto.PuntajeTareas 
+                            <li class="list-group-item lisgrup"><span><p>Fecha de creacion:</p></span>@objeto.Fecha
+                            <br>
+                          </ul>
+                        </div>  
+                </div>
+              </div>
+            }
+            </div>
+      </div>
+    </div>
   </div>
 </div>

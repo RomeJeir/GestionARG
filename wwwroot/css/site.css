@@ -157,3 +157,125 @@ h3{
   margin-top: 0.7%;
   color: white;
 }
+
+button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: #e62222;
+ }
+ 
+ button, button span {
+  transition: 200ms;
+ }
+ 
+ button .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+ }
+ 
+ button .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ button svg {
+  width: 15px;
+  fill: #eee;
+ }
+ 
+ button:hover {
+  background: #ff3636;
+ }
+ 
+ button:hover .text {
+  color: transparent;
+ }
+ 
+ button:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+ }
+ 
+ button:focus {
+  outline: none;
+ }
+ 
+ button:active .icon svg {
+  transform: scale(0.8);
+ }
+
+ .editbutton {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: rgb(120, 223, 3);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: rgb(120, 223, 3);
+ }
+ 
+ .editbutton, .editbutton span {
+  transition: 200ms;
+ }
+ 
+ .editbutton .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+ }
+ 
+ .editbutton .icon {
+  position: absolute;
+  border-left: 1px solid rgb(120, 223, 3);
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ .editbutton svg {
+  width: 15px;
+  fill: #eee;
+ }
+ 
+ .editbutton:hover {
+  background: rgb(120, 223, 3);
+ }
+ 
+ .editbutton:hover .text {
+  color: transparent;
+ }
+ 
+ .editbutton:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+ }
+ 
+ .editbutton:focus {
+  outline: none;
+ }
+ 
+ .editbutton:active .icon svg {
+  transform: scale(0.8);
+ }
