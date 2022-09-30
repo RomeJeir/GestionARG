@@ -1,14 +1,13 @@
 @using GestionARG.Models
-@model Tarea
+@model TareaHecha
 @{
     ViewData["Title"] = "Tarea Hecha";
 }
 
 <div class="text-center">
     <h1 class="LetraGrande" id="departamentos">Registrar tareas hechas</h1>
-    <h3 class="LetraMenosGrande">Ingrese un puntaje del 1 al 3</h3>
 </div>
-@using (Html.BeginForm("SubidaTareas", "Home", FormMethod.Post))
+@using (Html.BeginForm("TareaHechaPost", "Home", FormMethod.Post))
 {
 
     @if(ViewBag.Mensaje!=null){
@@ -31,10 +30,15 @@
           
         </div>
         <div class="col-md-4">
-          
+
             Puntaje
-            @Html.TextBoxFor(m => m.puntaje)
-          
+                <select name="puntaje">
+                    <option value="0" selected></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+        
         </div>
         <div class="col-md-4">
             <div class="form-group gallardo">

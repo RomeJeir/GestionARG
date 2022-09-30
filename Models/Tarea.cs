@@ -12,7 +12,7 @@ namespace GestionARG.Models
         public DateTime fechaCreacion { get; set; }
 
         [DisplayName("Puntaje")]
-        public string puntaje { get; set; }
+        public int puntaje { get; set; }
 
         [DisplayName("Descr.")]
         public string descripcion { get; set; }

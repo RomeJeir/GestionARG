@@ -8,7 +8,7 @@
     <h1 class="LetraGrande" id="departamentos">Subida de tareas</h1>
     <h3 class="LetraMenosGrande">Recurde que siempre que quiera agregar una tarea, empiece por el numero 0, debido a que para empezar no tendra calificaion </h3>
 </div>
-@using (Html.BeginForm("SubidaTareas", "Home", FormMethod.Post))
+@using (Html.BeginForm("SubidaTarea", "Home", FormMethod.Post))
 {
     @Html.HiddenFor(m=>m.idTarea)
     @if(ViewBag.Mensaje!=null){

@@ -65,10 +65,17 @@ namespace GestionARG.Controllers
         public IActionResult TareaHecha()
         {
             ViewBag.ListaTareas = BaseDatos.ListarTareas();
-            Tarea t = new Tarea();
+            TareaHecha t = new TareaHecha();
             t.fechaCreacion = DateTime.Now;
             ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
             return View(t);
+        }
+
+        [HttpPost]
+        public IActionResult TareaHechaPost(TareaHecha laTarea)
+        {
+            int cantidadFilasAfectada = BaseDatos.SubirTareaHecha(laTarea);
+            return RedirectToAction("Tareas", "Home");
         }
 
         public IActionResult SubidaTareas()
@@ -83,7 +90,7 @@ namespace GestionARG.Controllers
         }
 
         [HttpPost]
-        public IActionResult SubidaTareas(Tarea laTarea)
+        public IActionResult SubidaTarea(Tarea laTarea)
         {
             if(laTarea.idTarea>0){  
                 int cantidadFilasAfectada = BaseDatos.ModificarTarea(laTarea);
@@ -92,8 +99,6 @@ namespace GestionARG.Controllers
             else{
                 int cantidadFilasAfectada = BaseDatos.SubirTarea(laTarea);
             }
-            ViewBag.ListaAreas = BaseDatos.ListarArea();
-            ViewBag.Mensaje = "La tarea se grabó correctamente";
             return RedirectToAction("Tareas", "Home");
         }
 
@@ -203,7 +208,7 @@ namespace GestionARG.Controllers
             ViewBag.ListaAreas = BaseDatos.ListarArea();
             
 
-            if(idArea == 3 ){
+            if(idArea == 1){
 
             var result = await Google(Emp);
 

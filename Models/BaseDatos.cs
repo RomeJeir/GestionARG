@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=LAPTOP-RVSO9NN5;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -74,7 +74,6 @@ namespace GestionARG.Models
             Conectar();
             //string sentencia2 = 
             string sentencia = "INSERT INTO Tarea (NOMBRE, IDAREA, DESCRIPCION, FECHACREACION) VALUES (" + ToSQLString(tar.nombre) + " , " + tar.idArea + "," + ToSQLString(tar.descripcion) + " , " + ToSQLDate(tar.fechaCreacion) + ")";
-            Console.WriteLine(sentencia);
             var ListaTareas = BaseDatos.ListarTareas();
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
@@ -95,10 +94,10 @@ namespace GestionARG.Models
         }
 
 
-        public static int SubirTareaHecha(Tarea tar)
+        public static int SubirTareaHecha(TareaHecha tar)
         {
             Conectar();
-            string sentencia = "INSERT INTO TareasRealizadas (IDTAREAREALIZADA, FECHACREACION, PUNTAJE, IDTAREA, IDEMPLEADO) VALUES (" + tar.idTareaRealizada + ", " + ToSQLDate(tar.fechaCreacion) + ", " + ToSQLString(tar.puntaje) + ",  " + tar.idTarea + " , " + tar.idEmpleado + ")";
+            string sentencia = "INSERT INTO TareasRealizadas (FECHACREACION, PUNTAJE, IDTAREA, IDEMPLEADO) VALUES (" + ToSQLDate(tar.fechaCreacion) + ", " + tar.puntaje + ",  " + tar.idTarea + " , " + tar.idEmpleado + ")";
             var ListaTareas = BaseDatos.ListarTareas();
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
@@ -153,7 +152,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                               string sql = "SELECT Tarea.Nombre as TareaNombre,  case TareasRealizadas.Puntaje WHEN '1' Then 'Malo' WHEN '2' THEN 'Intermedio' WHEN '3' Then 'Bueno' END as PuntajeTareas,TareasRealizadas.FechaCreacion as Fecha, Empleados.Nombre as NombreEmpleado From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Tarea.IdArea = 2";
+                string sql = "SELECT Tarea.Nombre as TareaNombre,  case TareasRealizadas.Puntaje WHEN '1' Then 'Malo' WHEN '2' THEN 'Intermedio' WHEN '3' Then 'Bueno' END as PuntajeTareas,TareasRealizadas.FechaCreacion as Fecha, Empleados.Nombre as NombreEmpleado From TareasRealizadas INNER JOIN Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea Where Tarea.IdArea = 2";
                 return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
