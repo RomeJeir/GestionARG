@@ -10,7 +10,7 @@
 </div>
 @using (Html.BeginForm("SubidaTareas", "Home", FormMethod.Post))
 {
-
+    @Html.HiddenFor(m=>m.idTarea)
     @if(ViewBag.Mensaje!=null){
     <div class="alert-primary">@ViewBag.Mensaje</div>
     }
@@ -30,19 +30,13 @@
           
         </div>
         <label for="exampleInputPassword1">Area</label>
-            <select name="IdArea">
-              <option value=""></option>
-              @foreach(Area area in ViewBag.ListaAreas)
-              {
-                <option value="@area._IdArea">@area.Nombre</option>
-              }
-            </select>
+            @Html.DropDownList("IdArea", new SelectList(ViewBag.ListaAreas, "IdArea", "Nombre", Model.idArea), "", null)
         <div class="col-md-4">
           
             Descripcion
             @Html.TextBoxFor(m => m.descripcion)
         </div>      
       </div>
-      <button type="submit" class="btn boton" href='@Url.Action("SubidaTareas","Home")'>Subir</button>
+      <button type="submit" class="btn boton" href='@Url.Action("Tareas","Home")'>Subir</button>
     </div>
 }

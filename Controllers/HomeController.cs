@@ -65,14 +65,16 @@ namespace GestionARG.Controllers
         public IActionResult TareaHecha()
         {
             ViewBag.ListaTareas = BaseDatos.ListarTareas();
+            Tarea t = new Tarea();
+            t.fechaCreacion = DateTime.Now;
             ViewBag.ListaEmpleados = BaseDatos.ListarEmpleados();
-            return View();
+            return View(t);
         }
 
         public IActionResult SubidaTareas()
         {
             
-            ViewBag.ListaTareas = BaseDatos.ListarTareas();
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
             Tarea t = new Tarea();
             //t.nombre = "Romeo";
             t.fechaCreacion = DateTime.Now;
@@ -83,9 +85,16 @@ namespace GestionARG.Controllers
         [HttpPost]
         public IActionResult SubidaTareas(Tarea laTarea)
         {
-            int cantidadFilasAfectada = BaseDatos.SubirTarea(laTarea);
+            if(laTarea.idTarea>0){  
+                int cantidadFilasAfectada = BaseDatos.ModificarTarea(laTarea);
+            }
+
+            else{
+                int cantidadFilasAfectada = BaseDatos.SubirTarea(laTarea);
+            }
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
             ViewBag.Mensaje = "La tarea se grabó correctamente";
-            return View(new Tarea());
+            return RedirectToAction("Tareas", "Home");
         }
 
         public IActionResult SubidaEmpleados()
@@ -176,7 +185,7 @@ namespace GestionARG.Controllers
         }
 
         [HttpPost]
-        public IActionResult SubidaEmpleadosPOST(string nombre, int dni, int idArea, string descripcion, string direccion, int idjefe)
+        public async Task<IActionResult> SubidaEmpleadosPOST(string nombre, int dni, int idArea, string descripcion, string direccion, int idjefe)
         {
             Empleado Emp = new Empleado()
             {
@@ -196,7 +205,8 @@ namespace GestionARG.Controllers
 
             if(idArea == 3 ){
 
-            Google(Emp);
+            var result = await Google(Emp);
+
             return View("SubidaEmpleados");
 
             }else{
@@ -210,5 +220,18 @@ namespace GestionARG.Controllers
             return View();
         }
 
+        public IActionResult EliminarTarea(int IdTarea)
+        {
+            BaseDatos.EliminarTarea(IdTarea);
+            ViewBag.ListaTareas = BaseDatos.ListarTareas();
+            return View("Tareas");
+        }
+
+        public IActionResult EditarTarea(int IdTarea)
+        {
+            var tarea = BaseDatos.GetTarea(IdTarea);
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
+            return View("SubidaTareas", tarea);
+        }
     }
 }                    

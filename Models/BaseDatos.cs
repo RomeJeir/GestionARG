@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=A-PHZ2-LUM-16;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=LAPTOP-RVSO9NN5;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -73,7 +73,8 @@ namespace GestionARG.Models
         {
             Conectar();
             //string sentencia2 = 
-            string sentencia = "INSERT INTO Tarea (NOMBRE, IDAREA) VALUES (" + ToSQLString(tar.nombre) + " , " + tar.idArea + ")";
+            string sentencia = "INSERT INTO Tarea (NOMBRE, IDAREA, DESCRIPCION, FECHACREACION) VALUES (" + ToSQLString(tar.nombre) + " , " + tar.idArea + "," + ToSQLString(tar.descripcion) + " , " + ToSQLDate(tar.fechaCreacion) + ")";
+            Console.WriteLine(sentencia);
             var ListaTareas = BaseDatos.ListarTareas();
             SqlCommand Consulta = con.CreateCommand();
             Consulta.CommandText = sentencia;
@@ -81,6 +82,16 @@ namespace GestionARG.Models
             int cantidadFilasAfectada = Consulta.ExecuteNonQuery();
             Desconectar();
             return cantidadFilasAfectada;
+        }
+
+        public static int ModificarTarea(Tarea tar)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sentencia = "UPDATE [dbo].[Tarea] SET [Nombre] = @Nombre, [IdArea] = @IdArea, [Descripcion] = @Descripcion, [FechaCreacion] = @FechaCreacion WHERE idtarea = @idtarea";
+                int cantidadFilasAfectada = db.Execute(sentencia, new { Nombre=tar.nombre, IdArea = tar.idArea, Descripcion = tar.descripcion, IdTarea = tar.idTarea, FechaCreacion = tar.fechaCreacion });
+                return cantidadFilasAfectada;
+            }
         }
 
 
@@ -163,6 +174,27 @@ namespace GestionARG.Models
                 string sql = "SELECT * FROM Tarea";
 
                 return db.Query<Tarea>(sql).ToList();
+            }
+        }
+        
+        public static Tarea GetTarea(int idTarea)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Tarea where idTarea = @idTarea";
+
+                return db.Query<Tarea>(sql, new {idTarea}).SingleOrDefault();
+            }
+        }
+
+        public static void EliminarTarea(int idTarea)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                db.Open();
+                string sql = "Delete Tarea where IdTarea = @idTarea";
+
+                db.Execute(sql, new { idTarea} );
             }
         }
 

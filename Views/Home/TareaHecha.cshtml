@@ -6,6 +6,7 @@
 
 <div class="text-center">
     <h1 class="LetraGrande" id="departamentos">Registrar tareas hechas</h1>
+    <h3 class="LetraMenosGrande">Ingrese un puntaje del 1 al 3</h3>
 </div>
 @using (Html.BeginForm("SubidaTareas", "Home", FormMethod.Post))
 {
@@ -19,7 +20,7 @@
         <div class="col-md-4">
             <div class="form-group gallardo">
                 <label for="exampleFormControlTextarea1">Tarea</label>
-                @Html.DropDownList("idtarea", new SelectList(ViewBag.ListaTareas, "IdTarea", "Nombre"), string.Empty)
+                @Html.DropDownList("idtarea", new SelectList(ViewBag.ListaTareas, "idTarea", "nombre"), string.Empty)
             </div>
         </div>
         
@@ -42,6 +43,6 @@
             </div>
         </div>
       </div>
-      <button type="submit" class="btn boton" href='@Url.Action("SubidaTareas","Home")'>Subir</button>
+      <button type="submit" class="btn boton" href='@Url.Action("Tareas","Home")'>Enviar</button>
     </div>
 }
