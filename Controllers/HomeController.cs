@@ -106,6 +106,7 @@ namespace GestionARG.Controllers
         {
             ViewBag.ListaAreas = BaseDatos.ListarArea();
             ViewBag.ListaJefes = BaseDatos.ListarJefe();
+            ViewBag.ListarClientes = BaseDatos.ListarClientes();
             return View();
         }
 

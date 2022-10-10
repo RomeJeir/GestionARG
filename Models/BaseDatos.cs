@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=DESKTOP-BSJ52N9\MSQLSERVER;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -88,7 +88,7 @@ namespace GestionARG.Models
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sentencia = "UPDATE [dbo].[Tarea] SET [Nombre] = @Nombre, [IdArea] = @IdArea, [Descripcion] = @Descripcion, [FechaCreacion] = @FechaCreacion WHERE idtarea = @idtarea";
-                int cantidadFilasAfectada = db.Execute(sentencia, new { Nombre=tar.nombre, IdArea = tar.idArea, Descripcion = tar.descripcion, IdTarea = tar.idTarea, FechaCreacion = tar.fechaCreacion });
+                int cantidadFilasAfectada = db.Execute(sentencia, new { Nombre = tar.nombre, IdArea = tar.idArea, Descripcion = tar.descripcion, IdTarea = tar.idTarea, FechaCreacion = tar.fechaCreacion });
                 return cantidadFilasAfectada;
             }
         }
@@ -128,6 +128,16 @@ namespace GestionARG.Models
             }
         }
 
+        public static List<Cliente> ListarClientes()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Cliente";
+
+                return db.Query<Cliente>(sql).ToList();
+            }
+        }
+
         public static List<Area> ListarArea()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
@@ -148,7 +158,7 @@ namespace GestionARG.Models
             }
         }
 
-         public static List<EmpleadoTarea> ListarEmpleadosCompras()
+        public static List<EmpleadoTarea> ListarEmpleadosCompras()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
@@ -157,7 +167,7 @@ namespace GestionARG.Models
             }
         }
 
-         public static List<EmpleadoTarea> ListarEmpleadosAdministracion()
+        public static List<EmpleadoTarea> ListarEmpleadosAdministracion()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
@@ -175,14 +185,14 @@ namespace GestionARG.Models
                 return db.Query<Tarea>(sql).ToList();
             }
         }
-        
+
         public static Tarea GetTarea(int idTarea)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Tarea where idTarea = @idTarea";
 
-                return db.Query<Tarea>(sql, new {idTarea}).SingleOrDefault();
+                return db.Query<Tarea>(sql, new { idTarea }).SingleOrDefault();
             }
         }
 
@@ -193,10 +203,10 @@ namespace GestionARG.Models
                 db.Open();
                 string sql = "Delete Tarea where IdTarea = @idTarea";
 
-                db.Execute(sql, new { idTarea} );
+                db.Execute(sql, new { idTarea });
             }
         }
 
-        
+
     }
 }
