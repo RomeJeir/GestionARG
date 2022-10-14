@@ -45,6 +45,7 @@ namespace GestionARG.Controllers
         public IActionResult DepartamentoCompras()
         {
            List<EmpleadoTarea> datos = BaseDatos.ListarEmpleadosCompras();
+           
             ViewBag.ListaEmpleadosTarea = datos;
             return View();
         }

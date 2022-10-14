@@ -1,15 +1,15 @@
 @{
     ViewData["Title"] = "Subida de Empleados";
-}
+ }
 
 <div class="text-center">
     <h1 class="LetraGrande" id="departamentos">Subida de empleados</h1>
 </div>
 @using (Html.BeginForm("SubidaEmpleadosPOST", "Home", FormMethod.Post))
 {
-  @if(ViewBag.Mensaje!=null){
+  /*@if(ViewBag.Mensaje!=null){
   <div class="alert-primary">@ViewBag.Mensaje</div>
-  }
+  }*/
 <div class="text-center">
   <div class="container dos">
     <div class="row">
@@ -55,17 +55,6 @@
               @Html.DropDownList("idjefe", new SelectList(ViewBag.ListaJefes, "IdJefe", "Nombre"), string.Empty)
             </div>
           </div>
-
-          @if ("@area._IdArea" = "Ventas")
-          {
-            <div class="col-md-4">
-            <div class="form-group gallardo">
-              <label for="exampleFormControlTextarea1">Jefe</label>
-              @Html.DropDownList("idCliente", new SelectList(ViewBag.ListaClientes, "IdCliente", "Nombre"), string.Empty)
-            </div>
-          </div>
-
-          }
       </div>
       <button class="btn boton" href='@Url.Action("SubidaEmpleadosPOST","Home")'>Subir</button>
     </div>
