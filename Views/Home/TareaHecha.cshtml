@@ -46,6 +46,12 @@
                 @Html.DropDownList("idempleado", new SelectList(ViewBag.ListaEmpleados, "IdEmpleado", "Nombre"), string.Empty)
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="form-group gallardo">
+                <label for="exampleFormControlTextarea1">Area</label>
+                @Html.DropDownList("IdArea", new SelectList(ViewBag.ListaAreas, "IdArea", "Nombre", Model.idArea), "", null)
+            </div>
+        </div>
       </div>
       <button type="submit" class="btn boton" href='@Url.Action("Tareas","Home")'>Enviar</button>
     </div>

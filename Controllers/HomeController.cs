@@ -65,6 +65,7 @@ namespace GestionARG.Controllers
 
         public IActionResult TareaHecha()
         {
+            ViewBag.ListaAreas = BaseDatos.ListarArea();
             ViewBag.ListaTareas = BaseDatos.ListarTareas();
             TareaHecha t = new TareaHecha();
             t.fechaCreacion = DateTime.Now;

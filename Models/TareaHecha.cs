@@ -22,7 +22,8 @@ namespace GestionARG.Models
         public int idTarea { get; set; }
 
         public int idTareaRealizada { get; set; }
-        
+
+        public int idArea { get; set; }
     }
     
 }
