@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-043;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -175,6 +175,26 @@ namespace GestionARG.Models
                 return db.Query<EmpleadoTarea>(sql).ToList();
             }
         }
+
+                public static List<EmpleadoTareaPromedio> ListarPromedioEmpleadosCompras()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT AVG(CAST(TareasRealizadas.Puntaje as FLOAT)) as Promedio , COUNT(TareasRealizadas.IdEmpleado) as TareasHechasXEmpleado, Empleados.Nombre as NombreEmpleado from TareasRealizadas inner join Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado where Empleados.IdArea = 1 group by TareasRealizadas.IdEmpleado, Empleados.Nombre";
+                return db.Query<EmpleadoTareaPromedio>(sql).ToList();
+            }
+        }
+
+       public static List<EmpleadoTareaPromedio> ListarPromedioEmpleadosAdministracion()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT AVG(CAST(TareasRealizadas.Puntaje as FLOAT)) as Promedio , COUNT(TareasRealizadas.IdEmpleado) as TareasHechasXEmpleado, Empleados.Nombre as NombreEmpleado from TareasRealizadas inner join Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado where Empleados.IdArea = 3 group by TareasRealizadas.IdEmpleado, Empleados.Nombre";
+                return db.Query<EmpleadoTareaPromedio>(sql).ToList();
+            }
+        }
+
+
 
         public static List<Tarea> ListarTareas()
         {

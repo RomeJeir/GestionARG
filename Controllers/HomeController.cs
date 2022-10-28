@@ -50,6 +50,23 @@ namespace GestionARG.Controllers
             return View();
         }
 
+                public IActionResult DepartamentoComprasPromedio()
+        {
+           List<EmpleadoTareaPromedio> datos = BaseDatos.ListarPromedioEmpleadosCompras();
+           
+            ViewBag.ListaPromedioEmpleadosTarea = datos;
+            return View();
+        }
+
+              public IActionResult DepartamentoAdministracionPromedio()
+        {
+           List<EmpleadoTareaPromedio> datos = BaseDatos.ListarPromedioEmpleadosAdministracion();
+           
+            ViewBag.ListaPromedioEmpleadosTarea = datos;
+            return View();
+        }
+
+
         public IActionResult DepartamentoAdministracion()
         {
             List<EmpleadoTarea> datos = BaseDatos.ListarEmpleadosAdministracion();
