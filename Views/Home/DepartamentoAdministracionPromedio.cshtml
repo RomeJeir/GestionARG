@@ -2,14 +2,18 @@
 @using GestionARG.Models;
 
 @{
-    ViewData["Title"] = "Administración";
-    List<EmpleadoTarea> listita =  ViewBag.ListaEmpleadosTarea ;
+    ViewData["Title"] = "Compras";
+    List<EmpleadoTareaPromedio> listita =  ViewBag.ListaPromedioEmpleadosTarea ;
 }
 
+<a type="button" class="btn btn-success" href='@Url.Action("DepartamentoAdministracion","Home")' >Volver</a>
+
 <div class="text-center">
-  <h1 class="LetraGrande">Empleados de Administración</h1>
+  <h1 class="LetraGrande">Promedio Tareas Administración</h1>
 </div>
-<a type="button" class="btn btn-success" href='@Url.Action("DepartamentoAdministracionPromedio","Home")' >Promedio</a>
+
+
+
 <div class="text-center">
   <div class="container; caja">
     <div class="row">
@@ -20,7 +24,7 @@
         <h2 class="titulo">Datos</h2>
       </div>
       <div class="text-center">
-      @foreach (EmpleadoTarea objeto in listita)
+      @foreach (EmpleadoTareaPromedio objeto in listita)
             {
               <div class="container">
                 <div class="row"><hr>
@@ -31,9 +35,8 @@
                   </div>
                       <div class="col-md-7">
                           <ul class="list-group">
-                            <li class="list-group-item lisgrup"><span><p> Nombre de la Tarea:</p></span>@objeto.TareaNombre
-                            <li class="list-group-item lisgrup"><span><p>Devolucion </p></span>@objeto.PuntajeTareas 
-                            <li class="list-group-item lisgrup"><span><p>Fecha de creacion:</p></span>@objeto.Fecha
+                            <li class="list-group-item lisgrup"><span><p>Tareas hechas por este empleado</p></span>@objeto.TareasHechasXEmpleado
+                            <li class="list-group-item lisgrup"><span><p>promedio de puntaje:</p></span>@objeto.Promedio
                             <br>
                           </ul>
                         </div>  

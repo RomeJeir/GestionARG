@@ -18,11 +18,16 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group gallardo">
+                <label for="exampleFormControlTextarea1">Area</label>
+                @Html.DropDownList("IdArea", new SelectList(ViewBag.ListaAreas, "IdArea", "Nombre", Model.idArea), "", null)
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group gallardo">
                 <label for="exampleFormControlTextarea1">Tarea</label>
                 @Html.DropDownList("idtarea", new SelectList(ViewBag.ListaTareas, "idTarea", "nombre"), string.Empty)
             </div>
         </div>
-        
         <div class="col-md-4">
           
             Fecha creacion
@@ -44,12 +49,6 @@
             <div class="form-group gallardo">
                 <label for="exampleFormControlTextarea1">Empleado</label>
                 @Html.DropDownList("idempleado", new SelectList(ViewBag.ListaEmpleados, "IdEmpleado", "Nombre"), string.Empty)
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group gallardo">
-                <label for="exampleFormControlTextarea1">Area</label>
-                @Html.DropDownList("IdArea", new SelectList(ViewBag.ListaAreas, "IdArea", "Nombre", Model.idArea), "", null)
             </div>
         </div>
       </div>
