@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=LAPTOP-RVSO9NN5;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -200,7 +200,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Tarea";
+                string sql = "SELECT * FROM Tarea WHERE NOT EXISTS (SELECT * FROM TareasRealizadas WHERE Tarea.IdTarea = TareasRealizadas.IdTarea );";
 
                 return db.Query<Tarea>(sql).ToList();
             }
