@@ -80,6 +80,20 @@ namespace GestionARG.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult GetTareas(int idArea){
+            
+            var tareas = BaseDatos.ListarTareas(idArea);
+            return Json(tareas);
+        }
+
+        [HttpGet]
+        public IActionResult GetEmpleados(int idArea){
+            
+            var empleados = BaseDatos.ListarEA(idArea);
+            return Json(empleados);
+        }
+
         public IActionResult TareaHecha()
         {
             ViewBag.ListaAreas = BaseDatos.ListarArea();

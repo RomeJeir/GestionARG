@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=LAPTOP-RVSO9NN5;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -200,9 +200,29 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Tarea where IdArea=IdArea ";
+                string sql = "SELECT * FROM Tarea";
 
                 return db.Query<Tarea>(sql).ToList();
+            }
+        }
+
+        public static List<Tarea> ListarTareas(int idArea)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Tarea where idArea = @idArea";
+
+                return db.Query<Tarea>(sql, new { idArea }).ToList();
+            }
+        }
+
+        public static List<Empleado> ListarEA(int idArea)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Empleados where idArea = @idArea";
+
+                return db.Query<Empleado>(sql, new { idArea }).ToList();
             }
         }
 

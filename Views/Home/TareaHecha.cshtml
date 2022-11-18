@@ -25,7 +25,7 @@
         <div class="col-md-4">
             <div class="form-group gallardo">
                 <label for="exampleFormControlTextarea1">Tarea</label>
-                @Html.DropDownList("idtarea", new SelectList(ViewBag.ListaTareas, "idTarea", "nombre"), string.Empty)
+                @Html.DropDownList("idtarea", Enumerable.Empty<SelectListItem>(), "")
             </div>
         </div>
         <div class="col-md-4">
@@ -48,10 +48,53 @@
         <div class="col-md-4">
             <div class="form-group gallardo">
                 <label for="exampleFormControlTextarea1">Empleado</label>
-                @Html.DropDownList("idempleado", new SelectList(ViewBag.ListaEmpleados, "IdEmpleado", "Nombre"), string.Empty)
+                @Html.DropDownList("idempleado", Enumerable.Empty<SelectListItem>(), "")
             </div>
         </div>
       </div>
       <button type="submit" class="btn boton" href='@Url.Action("Tareas","Home")'>Enviar</button>
     </div>
+}
+@section scripts {
+    
+    <script type="text/javascript">
+        $(function(){
+         $("#IdArea").on("change", function(){
+            
+            $.ajax({  
+                type: "get",  
+                url: "@Url.Action("GetTareas", "Home")",  
+                data: { idArea: $('#IdArea').val() },  
+                datatype: "json",  
+                traditional: true
+                }).done(function(tareas){
+                    var $dropdown = $("#idtarea");
+                    $dropdown.empty();
+                    $dropdown.append($("<option />").val("").text(""));
+                    $.each(tareas, function() {
+                        $dropdown.append($("<option />").val(this.idTarea).text(this.nombre));
+                    });
+                });
+         });   
+        })
+        $(function(){
+         $("#IdArea").on("change", function(){
+            
+            $.ajax({  
+                type: "get",  
+                url: "@Url.Action("GetEmpleados", "Home")",
+                data: { idArea: $('#IdArea').val() },
+                datatype: "json",
+                traditional: true
+                }).done(function(empleados){
+                    var $dropdown = $("#idempleado");
+                    $dropdown.empty();
+                    $dropdown.append($("<option />").val("").text(""));
+                    $.each(empleados, function() {
+                        $dropdown.append($("<option />").val(this.idEmpleado).text(this.nombre));
+                    });
+                });
+         });   
+        })
+    </script>
 }
