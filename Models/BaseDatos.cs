@@ -10,7 +10,7 @@ namespace GestionARG.Models
 {
     public static class BaseDatos
     {
-        private static string _connectionString = @"Server=LAPTOP-RVSO9NN5;DataBase=GestionARG;Trusted_Connection=true";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-044;DataBase=GestionARG;Trusted_Connection=true";
         private static SqlConnection con;
 
 
@@ -180,7 +180,7 @@ namespace GestionARG.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT AVG(CAST(TareasRealizadas.Puntaje as FLOAT)) as Promedio , COUNT(TareasRealizadas.IdEmpleado) as TareasHechasXEmpleado, Empleados.Nombre as NombreEmpleado from TareasRealizadas inner join Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea  Where Tarea.IdArea = 1 group by TareasRealizadas.IdEmpleado, Empleados.Nombre";
+                string sql = "SELECT AVG(CAST(TareasRealizadas.Puntaje as FLOAT)) as Promedio , COUNT(TareasRealizadas.IdEmpleado) as TareasHechasXEmpleado, Empleados.Nombre as NombreEmpleado from TareasRealizadas inner join Empleados on TareasRealizadas.IdEmpleado = Empleados.IdEmpleado INNER JOIN Tarea on Tarea.IdTarea = TareasRealizadas.IdTarea  Where Tarea.IdArea = 2 group by TareasRealizadas.IdEmpleado, Empleados.Nombre";
                 return db.Query<EmpleadoTareaPromedio>(sql).ToList();
             }
         }
